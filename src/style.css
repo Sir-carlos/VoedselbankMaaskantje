@@ -2,6 +2,11 @@
     margin: 0;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+}
+
 .nav{
     background-color: greenyellow;
     overflow: hidden;
@@ -36,20 +41,18 @@ p{
   text-align: center;
 }
 
-.container{
-  display: grid;
-  grid-template-columns: auto auto auto;
-  column-gap: 50px;
-  row-gap: 50px;
+table{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
   width: 80%;
-  height: 80%;
-  margin: auto;
-  padding: 20px 0px 20px 0px;
+  text-align: center;
 }
 
-.grid-item{
+table, th, td {
+  border:1px solid black;
+}
+
+form{
   text-align: center;
-  border: 1px solid rgba(0, 0, 0, 1);
-  border-radius: 20px;
-  box-sizing: border-box;
 }
