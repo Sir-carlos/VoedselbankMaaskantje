@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php include 'header.html' ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,6 @@
     <title>Producten</title>
 </head>
 <body>
-    <div class="nav">
-        <a href="index.html">Home</a>
-        <a href="medewerkers.html">Medewerkers</a>
-        <a href="producten.html" class="active">Producten</a>
-        <a href="gezinnen.html">Gezinnen</a>
-        <a href="leveranciers.html">Leveranciers</a>
-        <a href="voedselpakketen.html">Voedselpakketen</a>
-        <a href="gebruikers.html">Gebruikers</a>
-        <a href="login.html" style="float: right;">Login</a>
-    </div>
     <h1>Producten</h1>
     
     <table>
