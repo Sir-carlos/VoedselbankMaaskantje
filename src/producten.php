@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Producten</title>
+    <?php
+    $user = "schooluser";
+    $pass = "Schooluser18!";
+
+    try {
+        $dbh = new PDO('mysql:host=localhost;dbname=voedselbank', $user, $pass);
+    } catch (PDOException $e) {
+        print("Error!: " . $e->getMessage() . "<br/>");
+        die();
+    }
+    ?>
 </head>
 <body>
     <h1>Producten</h1>
@@ -15,8 +26,26 @@
             <th>Product Naam</th>
             <th>Categorie</th>
             <th>EAN</th>
+            <th>Aantal</th>
             <th>Acties</th>
         </tr>
+        <?php
+        $query = $dbh->prepare(
+            "SELECT * FROM producten;");
+            $result = $query->execute();
+            $all = $query->fetchAll();
+
+            foreach($all as $key => $value){
+                echo(
+                    "<tr>
+                    <td>" . $value["naam"] . "</td>
+                    <td>" . $value["categorie"] . "</td>
+                    <td>" . $value["EAN"] . "</td>
+                    <td>" . $value["aantal"] . "</td>
+                    </tr>"
+                  );
+            }
+        ?>
     </table>
 
 </body>
