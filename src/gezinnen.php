@@ -6,17 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="src\style.css" rel="styleseheet">
     <title>Gezinnen Pagina</title>
-    <?php
-    $user = "schooluser";
-    $pass = "Schooluser18!";
-
-    try {
-        $dbh = new PDO('mysql:host=localhost;dbname=voedselbank', $user, $pass);
-    } catch (PDOException $e) {
-        print("Error!: " . $e->getMessage() . "<br/>");
-        die();
-    }
-    ?>
+    <?php require_once 'database.php';?>
 </head>
 <body>
     <h1>Gezinnen</h1>
