@@ -1,27 +1,25 @@
 <?php
-$user = "schooluser";
-$pass = "Schooluser18!";
 
-try {
-    $dbh = new PDO('mysql:host=localhost;dbname=voedselbank', $user, $pass);
-} catch (PDOException $e) {
-    print("Error!: " . $e->getMessage() . "<br/>");
-    die();
-}
+require_once 'database.php';
 
 try{
     $query = $dbh->prepare(
-        "SELECT * FROM gebruiker WHERE username = '". $_REQUEST['username'] ."';");
+        "SELECT * FROM gebruiker WHERE username = '". $_REQUEST['usernaam'] ."';");
         $result = $query->execute();
         $all = $query->fetchAll();
 }catch(PDOException $e){
     echo($e);
 };
-try{
-if(empty($all[0]['username'])){
-    echo("ter");
-}}catch(PDOException $e){
-    echo($e);
-}
 
-print_r($all[0]['username']);
+
+if(empty($all[0]['username'])){
+    echo("User not found");
+    header("?error=tata");
+}else if($all[0]['username'] === $_REQUEST['usernaam']){
+    echo("User found");
+    if($all[0]['password'] === $_REQUEST['password']){
+        echo("Password Correct");
+    }else{
+        echo("Password Incorrect");
+    }
+}

@@ -14,7 +14,7 @@
         <br>
 
         <label for="username">Username</label>
-        <input type="text" name="username" placeholder="Username" required>
+        <input type="text" name="usernaam" placeholder="Username" required>
 
         <br>
         <br>
