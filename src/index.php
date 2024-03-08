@@ -1,6 +1,6 @@
+<?php session_start(); include 'header.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php include 'header.html' ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +14,21 @@
 
 
 
+<button class="button-85" role="button">Button 85</button>
+
+</div>
+    
+    <div class="button-container">
+
+    <?php
+    if($_SESSION['loggedin'] == 1){
+        echo("Logged in");
+    }
+    print_r($_SESSION);
+    ?>
+
+
+<br>
 <button class="button-85" role="button">Button 85</button>
 
 </div>

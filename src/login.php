@@ -13,14 +13,14 @@
 
         <br>
 
-        <label for="username">Username</label>
-        <input type="text" name="usernaam" placeholder="Username" required>
+        <label for="username">Gebruikersnaam</label>
+        <input type="text" name="gebruikersnaam" placeholder="Gebruikernaam" required>
 
         <br>
         <br>
 
-        <label for="password">Password</label>
-        <input type="password" name="password" placeholder="Password" required>
+        <label for="password">Wachtwoord</label>
+        <input type="password" name="wachtwoord" placeholder="Wachtwoord" required>
 
         <br>
         <br>
