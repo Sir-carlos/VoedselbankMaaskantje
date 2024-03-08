@@ -21,10 +21,9 @@
     <div class="button-container">
 
     <?php
-    if($_SESSION['loggedin'] == 1){
+    if(isset($_SESSION['loggedin'])){
         echo("Logged in");
     }
-    print_r($_SESSION);
     ?>
 
 

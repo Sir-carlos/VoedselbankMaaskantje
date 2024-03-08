@@ -14,8 +14,8 @@
         <a href="voedselpakketen.php">Voedselpakketen</a>
         <a href="gebruikers.php">Gebruikers</a>
         <?php        
-        if($_SESSION['loggedin'] == 1){
-            echo('e');
+        if(isset($_SESSION['loggedin'])){
+            echo('<a> <img src="loggedin.jpg" class="logged"> </a>');
         }else{
             echo('<a href="login.php" style="float: right;">Login</a>');
         }
