@@ -1,6 +1,6 @@
 <?php
-$user = "schooluser";
-$pass = "Schooluser18!";
+$user = "root";
+$pass = "";
 
 try {
     $dbh = new PDO('mysql:host=localhost;dbname=voedselbank', $user, $pass);
