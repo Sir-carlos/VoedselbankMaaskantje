@@ -57,8 +57,77 @@ table, th, td {
 }
 
 form{
-  text-align: center;
+  text-align: left; 
 }
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -68,7 +137,8 @@ form{
 
 }
 
-.button-85 {
+/* Buttons styling */
+.main-button {
   padding: 0.6em 2em;
   border: none;
   outline: none;
@@ -84,7 +154,7 @@ form{
   transition: 1s ease;
 }
 
-.button-85:hover::before  {
+.main-button:hover::before  {
   background: linear-gradient(
     45deg,
     
@@ -102,7 +172,7 @@ form{
 
 }
 
-.button-85:before {
+.main-button:before {
   content: "";
   background: linear-gradient(
     45deg,
@@ -143,7 +213,7 @@ form{
   }
 }
 
-.button-85:after {
+.main-button:after {
   z-index: -1;
   content: "";
   position: absolute;
