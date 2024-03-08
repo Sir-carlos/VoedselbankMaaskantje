@@ -29,8 +29,8 @@
                 echo(
                     "<tr>
                     <td>" . $value["naam"] . "</td>
-                    <td>" . $value["categorie"] . "</td>
-                    <td>" . $value["EAN"] . "</td>
+                    <td>" . $value["idcategorie"] . "</td>
+                    <td>" . $value["ean"] . "</td>
                     <td>" . $value["aantal"] . "</td>
                     </tr>"
                   );

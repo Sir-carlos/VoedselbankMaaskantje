@@ -25,9 +25,9 @@
             foreach($all as $key => $value){
                 echo(
                     "<tr>
-                    <td>" . $value["username"] . "</td>
-                    <td>" . $value["password"] . "</td>
-                    <td>" . $value["rank"] . "</td>
+                    <td>" . $value["gebruikersnaam"] . "</td>
+                    <td>" . $value["wachtwoord"] . "</td>
+                    <td>" . $value["functie"] . "</td>
                     </tr>"
                   );
             }
