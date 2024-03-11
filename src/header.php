@@ -8,15 +8,15 @@
 </head>
 <body>
     <div class="nav">
-        <a href="index.php">Home</a>
-        <a href="producten.php">Producten</a>
-        <a href="gezinnen.php">Gezinnen</a>
-        <a href="leveranciers.php">Leveranciers</a>
-        <a href="voedselpakketen.php">Voedselpakketen</a>
-        <a href="gebruikers.php">Gebruikers</a>
+        <a href="index.php"><span>Home</span></a>
+        <a href="producten.php"><span>Producten</span></a>
+        <a href="gezinnen.php"><span>Gezinnen</span></a>
+        <a href="leveranciers.php"><span>Leveranciers</span></a>
+        <a href="voedselpakketen.php"><span>Voedselpakketen</span></a>
+        <a href="gebruikers.php"><span>Gebruikers</span></a>
         <?php        
         if(isset($_SESSION['loggedin'])){
-            echo('<a href="profiel.php"><img src="loggedin.jpg" class="logged"></a>');
+            echo('<a href="profiel.php" style="float: right;"><img src="loggedin.jpg"  class="logged"></a>');
         }else{
             echo('<a href="login.php" style="float: right;">Login</a>');
         }

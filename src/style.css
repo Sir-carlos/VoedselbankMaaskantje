@@ -29,7 +29,7 @@ a{
 .nav a img {
   position: absolute;
   bottom: 0;
-  /* padding: 0 !important; */
+   padding: 0 !important;
   height: 100%;
 }
 
