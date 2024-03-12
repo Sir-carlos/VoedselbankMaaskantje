@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'header.html' ?>
-<?php session_start(); include 'header.php';
+<?php include 'header.php';
 if(!empty($_SESSION)){
     if(!($_SESSION['functie'] == 'Medewerker') || !($_SESSION['functie'] == 'Directie')){
         header('location: index.php');
