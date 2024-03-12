@@ -29,7 +29,7 @@
         }
     };
         if(isset($_SESSION['loggedin'])){
-            echo('<a href="logout.php" style="float: right;"><span>Logout</span></a>');
+            echo('<a href="profiel.php" style="float: right;"><img src="loggedin.png"  class="logged"></a>');
         }else{
             echo('<a href="login.php" style="float: right;"><span>Login</span></a>');
         }
