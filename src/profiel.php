@@ -22,6 +22,7 @@
         <div class="pgrid-item">BSD</div>
     </div>
 
+    <a href="wachtwoord.php">Verander Wachtwoord</a>
     <a href="logout.php">Logout</a>
     
 </body>
