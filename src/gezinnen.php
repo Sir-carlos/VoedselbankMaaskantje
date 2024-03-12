@@ -2,10 +2,12 @@
 <html lang="en">
 <?php include 'header.php';
 if(!empty($_SESSION)){
-    if(!($_SESSION['functie'] == 'Medewerker') || !($_SESSION['functie'] == 'Directie')){
+    if(!($_SESSION['functie'] == 'Directie')){
+        if(!($_SESSION['functie'] == 'Medewerker')){
         header('location: index.php');
+        }
     }
-} ?>
+}?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
