@@ -16,7 +16,7 @@
         <a href="gebruikers.php"><span>Gebruikers</span></a>
         <?php        
         if(isset($_SESSION['loggedin'])){
-            echo('<a href="profiel.php" style="float: right;"><img src="loggedin.jpg"  class="logged"></a>');
+            echo('<a href="profiel.php" style="float: right;"><img src="loggedin.png"  class="logged"></a>');
         }else{
             echo('<a href="login.php" style="float: right;">Login</a>');
         }
