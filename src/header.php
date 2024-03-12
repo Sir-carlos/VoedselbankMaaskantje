@@ -9,16 +9,29 @@
 <body>
     <div class="nav">
         <a href="index.php"><span>Home</span></a>
-        <a href="producten.php"><span>Producten</span></a>
-        <a href="gezinnen.php"><span>Gezinnen</span></a>
-        <a href="leveranciers.php"><span>Leveranciers</span></a>
-        <a href="voedselpakketen.php"><span>Voedselpakketen</span></a>
-        <a href="gebruikers.php"><span>Gebruikers</span></a>
-        <?php        
+        <a href="form.php"><span>Formulier</span></a>
+        <?php
+        if(!empty($_SESSION)){
+        if($_SESSION['functie'] == 'Directie'){
+            echo('<a href="gezinnen.php"><span>Gezinnen</span></a> <!-- vrijwilliger -->
+            <a href="voedselpakketen.php"><span>Voedselpakketen</span></a> <!-- vrijwilliger -->
+            <a href="producten.php"><span>Producten</span></a> <!-- vrijwilliger medewerker -->
+            <a href="leveranciers.php"><span>Leveranciers</span></a> <!-- directie mederwerker -->
+            <a href="gebruikers.php"><span>Gebruikers</span></a> <!-- directie -->');
+        }elseif($_SESSION['functie'] == 'Medewerker'){
+            echo('<a href="producten.php"><span>Producten</span></a> <!-- vrijwilliger medewerker -->
+            <a href="leveranciers.php"><span>Leveranciers</span></a> <!-- directie mederwerker -->');
+        }elseif($_SESSION['functie'] == 'vrijwilliger'){
+            echo('<a href="gezinnen.php"><span>Gezinnen</span></a> <!-- vrijwilliger -->
+            <a href="voedselpakketen.php"><span>Voedselpakketen</span></a> <!-- vrijwilliger -->
+            <a href="producten.php"><span>Producten</span></a> <!-- vrijwilliger medewerker -->
+            <a href="leveranciers.php"><span>Leveranciers</span></a> <!-- directie mederwerker -->');            
+        }
+    };
         if(isset($_SESSION['loggedin'])){
-            echo('<a href="profiel.php" style="float: right;"><img src="loggedin.jpg"  class="logged"></a>');
+            echo('<a href="logout.php" style="float: right;"><span>Logout</span></a>');
         }else{
-            echo('<a href="login.php" style="float: right;">Login</a>');
+            echo('<a href="login.php" style="float: right;"><span>Login</span></a>');
         }
         ?>
     </div>
