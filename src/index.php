@@ -22,7 +22,8 @@
 
     <?php
     if(isset($_SESSION['loggedin'])){
-        echo("Logged in");
+        echo("Logged in <br><br>");
+        print_r($_SESSION);
     };
     ?>
 
