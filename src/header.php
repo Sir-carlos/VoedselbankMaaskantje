@@ -7,17 +7,31 @@
 </head>
 <body>
     <div class="nav">
-        <a href="index.php">Home</a>
-        <a href="producten.php">Producten</a>
-        <a href="gezinnen.php">Gezinnen</a>
-        <a href="leveranciers.php">Leveranciers</a>
-        <a href="voedselpakketen.php">Voedselpakketen</a>
-        <a href="gebruikers.php">Gebruikers</a>
-        <?php        
-        if($_SESSION['loggedin'] == 1){
-            echo('e');
+        <a href="index.php"><span>Home</span></a>
+        <a href="form.php"><span>Formulier</span></a>
+
+        <?php
+        if(!empty($_SESSION)){
+        if($_SESSION['functie'] == 'Directie'){
+            echo('<a href="gezinnen.php"><span>Gezinnen</span></a> <!-- vrijwilliger -->
+            <a href="voedselpakketen.php"><span>Voedselpakketen</span></a> <!-- vrijwilliger -->
+            <a href="producten.php"><span>Producten</span></a> <!-- vrijwilliger medewerker -->
+            <a href="leveranciers.php"><span>Leveranciers</span></a> <!-- directie mederwerker -->
+            <a href="gebruikers.php"><span>Gebruikers</span></a> <!-- directie -->');
+        }elseif($_SESSION['functie'] == 'Medewerker'){
+            echo('<a href="producten.php"><span>Producten</span></a> <!-- vrijwilliger medewerker -->
+            <a href="leveranciers.php"><span>Leveranciers</span></a> <!-- directie mederwerker -->');
+        }elseif($_SESSION['functie'] == 'vrijwilliger'){
+            echo('<a href="gezinnen.php"><span>Gezinnen</span></a> <!-- vrijwilliger -->
+            <a href="voedselpakketen.php"><span>Voedselpakketen</span></a> <!-- vrijwilliger -->
+            <a href="producten.php"><span>Producten</span></a> <!-- vrijwilliger medewerker -->
+            <a href="leveranciers.php"><span>Leveranciers</span></a> <!-- directie mederwerker -->');            
+        }
+    };
+        if(isset($_SESSION['loggedin'])){
+            echo('<a href="logout.php" style="float: right;"><span>Logout</span></a>');
         }else{
-            echo('<a href="login.php" style="float: right;">Login</a>');
+            echo('<a href="login.php" style="float: right;"><span>Login</span></a>');
         }
         ?>
     </div>
