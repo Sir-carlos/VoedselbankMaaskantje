@@ -229,3 +229,7 @@ form{
   top: 0;
   border-radius: 10px;
 }
+
+body {
+  font-family: "Noto Sans", sans-serif;
+}
