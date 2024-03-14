@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'header.html' ?>
+<?php include 'header.php' ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,9 +25,9 @@
             foreach($all as $key => $value){
                 echo(
                     "<tr>
-                    <td>" . $value["username"] . "</td>
-                    <td>" . $value["password"] . "</td>
-                    <td>" . $value["rank"] . "</td>
+                    <td>" . $value["gebruikersnaam"] . "</td>
+                    <td>" . $value["wachtwoord"] . "</td>
+                    <td>" . $value["functie"] . "</td>
                     </tr>"
                   );
             }

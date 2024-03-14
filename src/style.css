@@ -8,19 +8,30 @@ a{
   color: black;
 }
 
+/* navigation structure styling */
 .nav{
     background-color:    #00BF63;
     overflow: hidden;
+    position: relative;
+    
 }
 
 .nav a{
-    float: left;
+    
     color: #000000;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    /* text-align: center; */
+    padding: 14px 16px !important;
+    text-decoration: none; 
     font-size: 17px;
     transition: background-color 0.3s;
+}
+
+.nav a img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+   padding: 0 !important;
+  height: 100%;
 }
 
 .nav a:hover {
@@ -29,36 +40,99 @@ a{
   transition: 0,3s;
 }
 
+.nav a img:hover {
+  background-color: #00BF63 ;
+}
+
 .nav a.active {
   background-color:  #00BF63;
   color: white;
 }
 
+
+
+/* Heading styling */
 h1{
-  padding-top: 10px;
   text-align: center;
 }
 
 p{
-  padding-top: 10px;
+  
   text-align: center;
-}
-
-table{
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
-  width: 80%;
-  text-align: center;
-}
-
-table, th, td {
-  border:1px solid black;
 }
 
 form{
-  text-align: center;
+  text-align: left; 
 }
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -68,7 +142,8 @@ form{
 
 }
 
-.button-85 {
+/* Buttons styling */
+.main-button {
   padding: 0.6em 2em;
   border: none;
   outline: none;
@@ -84,7 +159,7 @@ form{
   transition: 1s ease;
 }
 
-.button-85:hover::before  {
+.main-button:hover::before  {
   background: linear-gradient(
     45deg,
     
@@ -102,7 +177,7 @@ form{
 
 }
 
-.button-85:before {
+.main-button:before {
   content: "";
   background: linear-gradient(
     45deg,
@@ -143,7 +218,7 @@ form{
   }
 }
 
-.button-85:after {
+.main-button:after {
   z-index: -1;
   content: "";
   position: absolute;
