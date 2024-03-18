@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Producten</title>
     <?php require_once 'database.php';?>
-
+    
     <style>
         .content-table {
             border-collapse: collapse;
@@ -32,11 +32,15 @@
         
         .content-table th,
         .content-table td {
-            padding: 12px 15px;
+            padding: 12px 15px; 
         }
 
         .content-table tbody tr {
             border-bottom: 1px solid #dddddd;
+        }
+
+        body {
+            font-family: "Noto Sans", sans-serif;
         }
 
     </style>
