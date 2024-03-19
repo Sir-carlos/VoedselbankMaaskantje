@@ -7,9 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <title>Producten</title>
     <?php require_once 'database.php';?>
+    <style>
+        .bimg{
+            width: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>Producten</h1>
+
+    <button>Toevoegen</button>
     
     <table>
         <tr>
@@ -31,8 +38,9 @@
                     <td>" . $value["naam"] . "</td>
                     <td>" . $value["idcategorie"] . "</td>
                     <td>" . $value["ean"] . "</td>
-                    <td>" . $value["aantal"] . "</td>
-                    </tr>"
+                    <td>" . $value["aantal"] . '</td>
+                    <td> <a href="producten_bewerken.php"><img src="bewerken.png" class="bimg"></a> </td>
+                    </tr>'
                   );
             }
         ?>
