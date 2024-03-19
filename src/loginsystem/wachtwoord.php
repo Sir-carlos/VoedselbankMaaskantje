@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="loginsystem/wachtwoord_check.php" method="POST">
+    <form action="wachtwoord_check.php" method="POST">
         <h1>Verander wachtwoord</h1>
 
         <br>
