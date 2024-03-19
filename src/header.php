@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="headerstyle.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +34,7 @@
         }
     };
         if(isset($_SESSION['loggedin'])){
-            echo('<a href="profiel.php" style="float: right;"><img src="loggedin.png"  class="logged"></a>');
+            echo('<a href="profiel.php" style="float: right;"><span>Profiel</span></a>');
         }else{
             echo('<a href="login.php" style="float: right;"><span>Login</span></a>');
         }

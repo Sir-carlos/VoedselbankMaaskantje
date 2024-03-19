@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+/* navigation structure styling */
+.nav{
+    background-color:    #00BF63;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+.nav a{
+    
+    color: #000000;
+    /* text-align: center; */
+    padding: 14px 16px !important;
+    text-decoration: none; 
+    font-size: 17px;
+    transition: background-color 0.3s;
+}
+
+.nav a img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+   padding: 0 !important;
+  height: 100%;
+}
+
+.nav a:hover {
+  background-color: #fff;
+  color: black;
+  transition: 0,3s;
+}
+
+.nav a img:hover {
+  background-color: #00BF63 ;
+}
+
+.nav a.active {
+  background-color:  #00BF63;
+  color: white;
+}
