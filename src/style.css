@@ -1,6 +1,16 @@
 
 
+/* Light Mode Styles */
+body {
+  background-color: #ffffff; 
+  color: #000000; 
+}
 
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #1a1a1a; 
+  color: #ffffff; 
+}
 
 
 /* Heading styling */
@@ -18,77 +28,6 @@ form{
   text-align: left; 
 }
 
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .button-container{
   margin-top: 100px;
   text-align: center;
@@ -97,7 +36,8 @@ form{
 
 /* Buttons styling */
 .main-button {
-  padding: 0.6em 2em;
+  padding: 10px 50px;
+  margin: 20px 20px;
   border: none;
   outline: none;
   color: rgb(0, 0, 0);
