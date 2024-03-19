@@ -42,11 +42,16 @@
         body {
             font-family: "Noto Sans", sans-serif;
         }
-
+        
+        .bimg{
+            width: 20px;
+        }
     </style>
 </head>
 <body>
     <h1>Producten</h1>
+
+    <button>Toevoegen</button>
     
 <table class="content-table">
     <thead>
@@ -71,8 +76,9 @@
                     <td>" . $value["naam"] . "</td>
                     <td>" . $value["idcategorie"] . "</td>
                     <td>" . $value["ean"] . "</td>
-                    <td>" . $value["aantal"] . "</td>
-                    </tr>"
+                    <td>" . $value["aantal"] . '</td>
+                    <td> <a href="producten_bewerken.php"><img src="bewerken.png" class="bimg"></a> </td>
+                    </tr>'
                   );
             }
         ?>
