@@ -34,9 +34,9 @@
         }
     };
         if(isset($_SESSION['loggedin'])){
-            echo('<a href="profiel.php" style="float: right;"><img src="loggedin.png"  class="logged"></a>');
+            echo('<a href="loginsystem/profiel.php" style="float: right;"><img src="loggedin.png"  class="logged"></a>');
         }else{
-            echo('<a href="login.php" style="float: right;"><span>Login</span></a>');
+            echo('<a href="loginsystem/login.php" style="float: right;"><span>Login</span></a>');
         }
         ?>
     </div>

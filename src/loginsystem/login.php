@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'header.php' ?>
+<?php include 'src/header.php' ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
     <title>Home Pagina</title>
 </head>
 <body>
-    <form action="login_check.php" method="POST">
+    <form action="loginsystem/login_check.php" method="POST">
         <h1>Login</h1>
 
         <br>
