@@ -14,49 +14,11 @@ if(!empty($_SESSION)){
     <link href="src\style.css" rel="styleseheet">
     <title>Gezinnen Pagina</title>
     <?php require_once 'database.php';?>
-
-    <style>
-        .content-table {
-            border-collapse: collapse;
-            margin: 25px 0;
-            font-size: 0.9em;
-            min-width: 400px;
-            border-radius: 5px 5px 0 0;
-            overflow: hidden;
-            box-shadow: 0 0 1px grey;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 100px;
-            width: 80%;
-        }
-
-        .content-table thead {
-            background-color: #00BF63;
-            color: #ffffff;
-            text-align: left;
-            font-weight: bold;
-        }
-        
-        .content-table th,
-        .content-table td {
-            padding: 12px 15px; 
-        }
-
-        .content-table tbody tr {
-            border-bottom: 1px solid #dddddd;
-        }
-
-        body {
-            font-family: "Noto Sans", sans-serif;
-        }
-
-    </style>
 </head>
 <body>
     <h1>Gezinnen</h1>
 
-<table class="content-table">
-    <thead>
+    <table class="gdata">
         <tr>
             <th>Gezinnen Naam</th>
             <th>Adres</th>
@@ -66,8 +28,7 @@ if(!empty($_SESSION)){
             <th>Kinderen</th>
             <th>Baby's</th>
         </tr>
-    </thead>
-    <tbody>
+        <tr>
         <?php
         $query = $dbh->prepare(
             "SELECT * FROM klanten;");
@@ -88,8 +49,8 @@ if(!empty($_SESSION)){
                   );
             }
         ?>
-    </tbody>
-</table>
+        </tr>
+    </table>
     
 </body>
     <script src="script.js"></script>
