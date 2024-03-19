@@ -17,7 +17,7 @@
         <a href="form.php"><span>Formulier</span></a>
         <?php
         if(!empty($_SESSION)){
-        if($_SESSION['functie'] == 'Directie'){
+        if($_SESSION['functie'] == 'Directie'){ 
             echo('<a href="gezinnen.php"><span>Gezinnen</span></a> <!-- vrijwilliger -->
             <a href="voedselpakketen.php"><span>Voedselpakketen</span></a> <!-- vrijwilliger -->
             <a href="producten.php"><span>Producten</span></a> <!-- vrijwilliger medewerker -->
@@ -40,6 +40,8 @@
         }
         ?>
     </div>
+    <?php include 'dark_mode_toggle.php'; ?> <!-- Include dark mode toggle -->
+
 </body>
     <script src="script.js"></script>
 </html>
