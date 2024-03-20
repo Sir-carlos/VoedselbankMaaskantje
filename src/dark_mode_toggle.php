@@ -1,6 +1,6 @@
 
 
-<button id="dark-mode-toggle">Dark Mode</button>
+<button id="dark-mode" class="nav">Dark Mode</button>
 
 <script>
     // Check if user preference for dark mode exists
@@ -12,7 +12,7 @@
     }
 
     // Toggle between light and dark modes
-    document.getElementById('dark-mode-toggle').addEventListener('click', () => {
+    document.getElementById('dark-mode').addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
 
         // Save user preference for dark mode

@@ -39,8 +39,9 @@
             echo('<a href="login.php" style="float: right;"><span>Login</span></a>');
         }
         ?>
+            <?php include 'dark_mode_toggle.php'; ?> <!-- Include dark mode toggle -->
+
     </div>
-    <?php include 'dark_mode_toggle.php'; ?> <!-- Include dark mode toggle -->
 
 </body>
     <script src="script.js"></script>
