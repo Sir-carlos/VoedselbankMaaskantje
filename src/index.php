@@ -8,14 +8,15 @@
     <title>Home Pagina</title>
 </head>
 <body>
+
     <h1>Home</h1>
-    <p>bla bla bla bla bla</p>
+    <p>Lorem ipsum dolor sit amet</p>
     <div class="button-container">
 
 
 
-<button class="button-85" role="button">Button 85</button>
-
+<button class="main-button" role="button">Button</button>
+<button class="main-button" role="button">Button</button>
 </div>
     
     <div class="button-container">
@@ -29,10 +30,10 @@
 
 
 <br>
-<button class="button-85" role="button">Button 85</button>
+
 
 </div>
-    
+
 </body>
     <script src="script.js"></script>
 </html>

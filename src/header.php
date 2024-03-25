@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="headerstyle.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <div class="nav">
@@ -12,7 +17,7 @@
         <a href="form.php"><span>Formulier</span></a>
         <?php
         if(!empty($_SESSION)){
-        if($_SESSION['functie'] == 'Directie'){
+        if($_SESSION['functie'] == 'Directie'){ 
             echo('<a href="gezinnen.php"><span>Gezinnen</span></a> <!-- vrijwilliger -->
             <a href="voedselpakketen.php"><span>Voedselpakketen</span></a> <!-- vrijwilliger -->
             <a href="producten.php"><span>Producten</span></a> <!-- vrijwilliger medewerker -->
@@ -29,12 +34,15 @@
         }
     };
         if(isset($_SESSION['loggedin'])){
-            echo('<a href="profiel.php" style="float: right;"><img src="loggedin.png"  class="logged"></a>');
+            echo('<a href="profiel.php" style="float: right;"><span>Profiel</span></a>');
         }else{
             echo('<a href="login.php" style="float: right;"><span>Login</span></a>');
         }
         ?>
+            <?php include 'dark_mode_toggle.php'; ?> <!-- Include dark mode toggle -->
+
     </div>
+
 </body>
     <script src="script.js"></script>
 </html>
