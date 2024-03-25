@@ -1,58 +1,21 @@
 
-*{
-    margin: 0;
+
+/* Light Mode Styles */
+body {
+  background-color: #ffffff; 
+  color: #000000; 
 }
 
-a{
-  text-decoration: none;
-  color: black;
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #1a1a1a; 
+  color: #ffffff; 
 }
-
-/* navigation structure styling */
-.nav{
-    background-color:    #00BF63;
-    overflow: hidden;
-    position: relative;
-    
-}
-
-.nav a{
-    
-    color: #000000;
-    /* text-align: center; */
-    padding: 14px 16px !important;
-    text-decoration: none; 
-    font-size: 17px;
-    transition: background-color 0.3s;
-}
-
-.nav a img {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-   padding: 0 !important;
-  height: 100%;
-}
-
-.nav a:hover {
-  background-color: #fff;
-  color: black;
-  transition: 0,3s;
-}
-
-.nav a img:hover {
-  background-color: #00BF63 ;
-}
-
-.nav a.active {
-  background-color:  #00BF63;
-  color: white;
-}
-
 
 
 /* Heading styling */
 h1{
+  padding: 100px 0px 50px;
   text-align: center;
 }
 
@@ -65,77 +28,6 @@ form{
   text-align: left; 
 }
 
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .button-container{
   margin-top: 100px;
   text-align: center;
@@ -144,7 +36,8 @@ form{
 
 /* Buttons styling */
 .main-button {
-  padding: 0.6em 2em;
+  padding: 10px 50px;
+  margin: 20px 20px;
   border: none;
   outline: none;
   color: rgb(0, 0, 0);
@@ -228,6 +121,24 @@ form{
   left: 0;
   top: 0;
   border-radius: 10px;
+}
+
+#dark-mode {
+  border: 0;
+  color: #000000;
+    text-align: center;
+    padding: 14px 16px !important;
+    text-decoration: none; 
+    font-size: 17px;
+    transition: background-color 0.3s;
+    float: left;
+    cursor: pointer;
+}
+
+#dark-mode:hover {
+  background-color: #fff;
+  color: black;
+  transition: 0,3s;
 }
 
 body {

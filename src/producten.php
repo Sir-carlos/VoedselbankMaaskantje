@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'header.php' ?>
+<?php include 'header.php'; require_once 'database.php'; ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Producten</title>
-    <?php require_once 'database.php';?>
-    
+    <title>Producten</title>    
     <style>
         .content-table {
             border-collapse: collapse;
@@ -42,11 +40,16 @@
         body {
             font-family: "Noto Sans", sans-serif;
         }
-
+        
+        .bimg{
+            width: 20px;
+        }
     </style>
 </head>
 <body>
     <h1>Producten</h1>
+
+    <button>Toevoegen</button>
     
 <table class="content-table">
     <thead>
@@ -71,10 +74,12 @@
                     <td>" . $value["naam"] . "</td>
                     <td>" . $value["idcategorie"] . "</td>
                     <td>" . $value["ean"] . "</td>
-                    <td>" . $value["aantal"] . "</td>
-                    </tr>"
+                    <td>" . $value["aantal"] . '</td>
+                    <td> <a href="producten_bewerken.php?q='. $key .'"><img src="bewerken.png" class="bimg" onclick="sendkey($key)"></a> </td>
+                    </tr>'
                   );
-            }
+            };
+
         ?>
     </tbody>
 </table>
