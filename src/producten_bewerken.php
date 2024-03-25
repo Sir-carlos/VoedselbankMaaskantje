@@ -17,7 +17,7 @@
         print_r($all[$_REQUEST["q"]]);
     ?>
     
-    <form action="login_check.php" method="POST">
+    <form action="producten.php" method="POST">
         <h1>Producten Bewerken</h1>
 
         <br>
