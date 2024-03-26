@@ -10,12 +10,15 @@
 </head>
 <body>
     <h1>Gebruikers</h1>
-    <table>
+    <table class="content-table">
+    <thead>
         <tr>
             <th>Username</th>
             <th>Password</th>
             <th>Rank</th>
         </tr>
+    </thead>
+    <tbody>
         <?php
         $query = $dbh->prepare(
             "SELECT * FROM gebruiker;");
@@ -32,6 +35,7 @@
                   );
             }
         ?>
+        </tbody>
     </table>
 </body>
     <script src="script.js"></script>
