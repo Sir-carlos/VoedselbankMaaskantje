@@ -9,28 +9,44 @@ a{
 
 /* navigation structure styling */
 .nav{
-    background-color:    #00BF63;
+    background-color:    #00bf6353;
     overflow: hidden;
     position: relative;
-    
+    border-bottom: 5px solid #00BF63;
 }
 
 .nav a{
-    
     color: #000000;
     text-align: center;
     padding: 14px 16px !important;
     text-decoration: none; 
     font-size: 17px;
-    transition: background-color 0.3s;
+    transition: height 1.3s;
     float: left;
+    height: auto;
+    background: linear-gradient(to top, #00BF63, #00bf6353); 
+    z-index: -1;
 }
 
+/* .nav a:before {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+
+
+} */
+
 .nav a:hover {
-  background-color: #fff;
+  height: 100%; }
+
+/* .nav a:hover {
+  background: linear-gradient(to top, #00BF63, transparent); Gradient from bottom to top;
+   background-color: #00BF63;
   color: black;
   transition: 0,3s;
-}
+}  */
 
 .nav a.active {
   background-color:  #00BF63;
