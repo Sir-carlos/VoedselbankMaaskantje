@@ -123,9 +123,9 @@ form{
   border-radius: 10px;
 }
 
-#dark-mode {
+#dark-mode { 
   border: 0;
-  color: #000000;
+  color: #150d0d;
     text-align: center;
     padding: 14px 16px !important;
     text-decoration: none; 
@@ -136,7 +136,7 @@ form{
 }
 
 #dark-mode:hover {
-  background-color: #fff;
+  background-color: #00bf6385;
   color: black;
   transition: 0,3s;
 }
