@@ -68,6 +68,8 @@
             $result = $query->execute();
             $all = $query->fetchAll();
 
+            //print_r($_REQUEST);
+
             foreach($all as $key => $value){
                 echo(
                     "<tr>
@@ -79,6 +81,16 @@
                     </tr>'
                   );
             };
+
+            if(!empty($_REQUEST)){
+            //$sql = "UPDATE producten SET naam = '". $_REQUEST['naam'] ."', ean = '". $_REQUEST['ean'] ."', aantal = '". $_REQUEST['aantal'] ."' WHERE idproduct = '". $_REQUEST['q'] ."';";
+
+            if($result = $dbh -> query("UPDATE producten SET naam = '". $_REQUEST['naam'] ."', ean = '". $_REQUEST['ean'] ."', aantal = '". $_REQUEST['aantal'] ."' WHERE idproduct = '". $_REQUEST['idcategorie'] ."';")){
+                echo("Insertion Successfully");
+            }else{
+                echo("Insertion Failed");
+            };
+            }
 
         ?>
     </tbody>
