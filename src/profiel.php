@@ -25,6 +25,7 @@
     </div>
 
     <a href="wachtwoord.php">Verander Wachtwoord</a>
+    <br>
     <a href="logout.php">Logout</a>
     
 </body>
