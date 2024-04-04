@@ -12,12 +12,33 @@
             width: 20px;
         }
 
+        .control {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            flex-direction: row;
+            width: 80%;
+        }
+
+        .button {
+            color: white;
+            background-color: #00BF63;
+            border: none;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+        }
+
     </style>
 </head>
 <body>
     <h1>Producten</h1>
 
-    <button>Toevoegen</button>
+    <div class="control">
+        <button class="button"><img src="plus.svg">Toevoegen</button>
+    </div>
+    
     
 <table class="content-table">
     <thead>
