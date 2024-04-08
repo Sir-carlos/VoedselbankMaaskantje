@@ -19,15 +19,31 @@
             margin-bottom: 1rem;
             flex-direction: row;
             width: 80%;
+            margin: auto;
         }
 
         .button {
             color: white;
             background-color: #00BF63;
             border: none;
-            padding: 10px 15px;
+            border-radius: 5px;
+            padding: 8px 10px;
             text-align: center;
             text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .svg {
+            padding-right: 10px;
+        }
+
+        input[type=search]{
+            padding: 10px;
+            border: 1px solid #D3D3D3;
+            border-radius: 5px;
         }
 
     </style>
@@ -36,7 +52,13 @@
     <h1>Producten</h1>
 
     <div class="control">
-        <button class="button"><img src="plus.svg">Toevoegen</button>
+        <div class="search">
+            <input type="search" id="site-search" name="search" placeholder="Zoeken . . ." />
+        </div>
+        <div class="box">
+            <button class="button"><img src="plusicon.svg" class="svg" width="30px">Toevoegen</button>
+        </div>
+        
     </div>
     
     
