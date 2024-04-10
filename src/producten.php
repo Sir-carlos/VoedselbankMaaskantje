@@ -74,35 +74,31 @@
     </thead>
     <tbody>
         <?php
+        if(!empty($_REQUEST)){
+            if($result = $dbh -> query("UPDATE producten SET naam = '". $_REQUEST['naam'] ."', aantal = '". $_REQUEST['aantal'] ."' WHERE idproduct = '". $_REQUEST['idcategorie'] ."';")){
+                echo("Insertion Successfully"); 
+            }else{
+                echo("Insertion Failed");
+            };
+        }
+
         $query = $dbh->prepare(
-            "SELECT * FROM producten;");
+            "SELECT * FROM producten 
+            INNER JOIN categorie ON producten.idcategorie = categorie.idcategorie;");
             $result = $query->execute();
             $all = $query->fetchAll();
-
-            //print_r($_REQUEST);
 
             foreach($all as $key => $value){
                 echo(
                     "<tr>
-                    <td>" . $value["naam"] . "</td>
-                    <td>" . $value["idcategorie"] . "</td>
+                    <td>" . $value["1"] . "</td>
+                    <td>" . $value["6"] . "</td>
                     <td>" . $value["ean"] . "</td>
                     <td>" . $value["aantal"] . '</td>
                     <td> <a href="producten_bewerken.php?q='. $key .'"><img src="bewerken.png" class="bimg" onclick="sendkey($key)"></a> </td>
                     </tr>'
                   );
             };
-
-            if(!empty($_REQUEST)){
-            //$sql = "UPDATE producten SET naam = '". $_REQUEST['naam'] ."', ean = '". $_REQUEST['ean'] ."', aantal = '". $_REQUEST['aantal'] ."' WHERE idproduct = '". $_REQUEST['q'] ."';";
-
-            if($result = $dbh -> query("UPDATE producten SET naam = '". $_REQUEST['naam'] ."', ean = '". $_REQUEST['ean'] ."', aantal = '". $_REQUEST['aantal'] ."' WHERE idproduct = '". $_REQUEST['idcategorie'] ."';")){
-                echo("Insertion Successfully");
-            }else{
-                echo("Insertion Failed");
-            };
-            }
-
         ?>
     </tbody>
 </table>
