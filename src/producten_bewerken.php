@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bewerk Producten</title>
+    <link rel="stylesheet" href="formstyle.css">
 </head>
 <body>
     <?php
@@ -15,16 +16,9 @@
 
         $q = $_REQUEST["q"];
     
-    echo('<form action="producten_bewerken_response.php?q=' . $q . '" method="POST">
+    echo('<form action="producten.php?q=' . $q . '" method="POST">
         <h1>Producten Bewerken</h1>
 
-        <br>
-
-        <label for="ean">EAN</label>
-        <input type="text" name="ean" placeholder="5632795419357" value="'. $all[$q]['ean'] .'">
-
-        
-        <br>
         <br>
 
         <label for="naam">Naam</label>
