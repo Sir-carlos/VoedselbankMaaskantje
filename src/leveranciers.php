@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Producten</title>    
+    <title>leveranciers</title>    
     <style>
         
         .bimg{
@@ -15,24 +15,24 @@
     </style>
 </head>
 <body>
-    <h1>Producten</h1>
+    <h1>Leveranciers</h1>
 
-    <button>Toevoegen</button>
     
 <table class="content-table">
     <thead>
         <tr>
-            <th>Product Naam</th>
-            <th>Categorie</th>
-            <th>EAN</th>
-            <th>Aantal</th>
-            <th>Acties</th>
+            <th>Bedrijf</th>
+            <th>Contactpersoon</th>
+            <th>Email</th>
+            <th>Postcode</th>
+            <th>Telefoon</th>
+            <th>Volgende levering</th>
         </tr>
     </thead>
     <tbody>
         <?php
         $query = $dbh->prepare(
-            "SELECT * FROM producten;");
+            "SELECT * FROM leveranciers;");
             $result = $query->execute();
             $all = $query->fetchAll();
 
@@ -41,11 +41,12 @@
             foreach($all as $key => $value){
                 echo(
                     "<tr>
-                    <td>" . $value["naam"] . "</td>
-                    <td>" . $value["idcategorie"] . "</td>
-                    <td>" . $value["ean"] . "</td>
-                    <td>" . $value["aantal"] . '</td>
-                    <td> <a href="producten_bewerken.php?q='. $key .'"><img src="bewerken.png" class="bimg" onclick="sendkey($key)"></a> </td>
+                    <td>" . $value["Bedrijf"] . "</td>
+                    <td>" . $value["Contactpersoon"] . "</td>
+                    <td>" . $value["email"] . "</td>
+                    <td>" . $value["Postcode"] . "</td>
+                    <td>" . $value["telefoonnummer"] . "</td>
+                    <td>" . $value["Volgende levering"] . '</td>
                     </tr>'
                   );
             };
@@ -67,3 +68,6 @@
 </body>
     <script src="script.js"></script>
 </html>
+
+
+
