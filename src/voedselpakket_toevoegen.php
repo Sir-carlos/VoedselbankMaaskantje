@@ -31,7 +31,7 @@
         <br>
 
         <label for="familie">Selecteer Producten</label>
-        <select>
+        <select id="keuzen" onchange="press()">
         <?php
                 $query = $dbh->prepare(
                     "SELECT * FROM producten;");
@@ -61,16 +61,26 @@
     </thead>
     <tbody>
         <script>
-            function add(data){
+            function press(){
+                var x = document.getElementById("keuzen").value;
+
+                var table = document.getElementsByClassName("content-table");
+
+                console.log(table);
+
                 var tr = document.createElement('tr');
+                table[0].appendChild(tr);
                 
-                var td = document.createElement('td');
-                
-                  
+                var n = document.createElement('td')
+                tr.appendChild(n);
+
+                var g = document.createTextNode(x);
+                n.appendChild(g);
             }
         </script>  
     </tbody>
 </table>
+<p id="test"></p>
 </body>
     <script src="script.js"></script>
 </html>
