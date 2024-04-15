@@ -38,6 +38,7 @@ body.dark-mode {
 
 button:hover {
   cursor: pointer;
+  background-color: #00934c;
 }
 
 .svg {
