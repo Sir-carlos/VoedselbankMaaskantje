@@ -14,7 +14,6 @@
 <body>
     <div class="nav">
         <a href="index.php"><span>Home</span></a>
-        <a href="form.php"><span>Formulier</span></a>
         <?php
         if(!empty($_SESSION)){
         if($_SESSION['functie'] == 'Directie'){ 

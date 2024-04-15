@@ -7,49 +7,27 @@
     <link rel="stylesheet" href="style.css">
     <title>Producten</title>    
     <style>
-        .content-table {
-            border-collapse: collapse;
-            margin: 25px 0;
-            font-size: 0.9em;
-            min-width: 400px;
-            border-radius: 5px 5px 0 0;
-            overflow: hidden;
-            box-shadow: 0 0 1px grey;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 100px;
-            width: 80%;
-        }
-
-        .content-table thead {
-            background-color: #00BF63;
-            color: #ffffff;
-            text-align: left;
-            font-weight: bold;
-        }
-        
-        .content-table th,
-        .content-table td {
-            padding: 12px 15px; 
-        }
-
-        .content-table tbody tr {
-            border-bottom: 1px solid #dddddd;
-        }
-
-        body {
-            font-family: "Noto Sans", sans-serif;
-        }
         
         .bimg{
             width: 20px;
         }
+
     </style>
 </head>
 <body>
     <h1>Producten</h1>
 
-    <button>Toevoegen</button>
+    <div class="control">
+        <div class="search">
+            <input type="search" id="site-search" name="search" placeholder="Zoeken . . ." />
+        </div>
+        <div class="box">
+            <a href="producten_bewerken.php">
+            <button class="button"><img src="plusicon.svg" class="svg" width="30px">Toevoegen</button>
+            </a>
+        </div>
+    </div>
+    
     
 <table class="content-table">
     <thead>
@@ -63,23 +41,31 @@
     </thead>
     <tbody>
         <?php
+        if(!empty($_REQUEST)){
+            if($result = $dbh -> query("UPDATE producten SET naam = '". $_REQUEST['naam'] ."', aantal = '". $_REQUEST['aantal'] ."' WHERE idproduct = '". $_REQUEST['idcategorie'] ."';")){
+                echo("Insertion Successfully"); 
+            }else{
+                echo("Insertion Failed");
+            };
+        }
+
         $query = $dbh->prepare(
-            "SELECT * FROM producten;");
+            "SELECT * FROM producten 
+            INNER JOIN categorie ON producten.idcategorie = categorie.idcategorie;");
             $result = $query->execute();
             $all = $query->fetchAll();
 
             foreach($all as $key => $value){
                 echo(
                     "<tr>
-                    <td>" . $value["naam"] . "</td>
-                    <td>" . $value["idcategorie"] . "</td>
+                    <td>" . $value["1"] . "</td>
+                    <td>" . $value["6"] . "</td>
                     <td>" . $value["ean"] . "</td>
                     <td>" . $value["aantal"] . '</td>
                     <td> <a href="producten_bewerken.php?q='. $key .'"><img src="bewerken.png" class="bimg" onclick="sendkey($key)"></a> </td>
                     </tr>'
                   );
             };
-
         ?>
     </tbody>
 </table>
