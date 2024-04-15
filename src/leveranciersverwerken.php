@@ -11,7 +11,7 @@ try {
 }
 
 // Haal het laatste ID op uit de database
-$sql_last_id = "SELECT MAX(idklanten) AS last_id FROM klanten";
+$sql_last_id = "SELECT MAX(id) AS last_id FROM leveranciers";
 $stmt_last_id = $dbh->query($sql_last_id);
 $last_id_row = $stmt_last_id->fetch(PDO::FETCH_ASSOC);
 $last_id = $last_id_row['last_id'];
