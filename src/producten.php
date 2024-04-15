@@ -17,9 +17,6 @@
 <body>
     <h1>Producten</h1>
 
-<<<<<<< Updated upstream
-    <button>Toevoegen</button>
-=======
     <div class="control">
         <div class="search">
             <input type="search" id="site-search" name="search" placeholder="Zoeken . . ." />
@@ -30,7 +27,6 @@
         
     </div>
     
->>>>>>> Stashed changes
     
 <table class="content-table">
     <thead>
