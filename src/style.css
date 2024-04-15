@@ -36,6 +36,10 @@ body.dark-mode {
   justify-content: space-between;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .svg {
   padding-right: 10px;
 }
