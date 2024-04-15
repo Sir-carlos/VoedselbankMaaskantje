@@ -17,7 +17,20 @@
 <body>
     <h1>Producten</h1>
 
+<<<<<<< Updated upstream
     <button>Toevoegen</button>
+=======
+    <div class="control">
+        <div class="search">
+            <input type="search" id="site-search" name="search" placeholder="Zoeken . . ." />
+        </div>
+        <div class="box">
+            <a class="button" href="producten_toevoegen"><img src="plusicon.svg" class="svg" width="30px">Toevoegen</a>
+        </div>
+        
+    </div>
+    
+>>>>>>> Stashed changes
     
 <table class="content-table">
     <thead>
@@ -31,19 +44,26 @@
     </thead>
     <tbody>
         <?php
-        if(!empty($_REQUEST)){
-            if($result = $dbh -> query("UPDATE producten SET naam = '". $_REQUEST['naam'] ."', aantal = '". $_REQUEST['aantal'] ."' WHERE idproduct = '". $_REQUEST['idcategorie'] ."';")){
-                echo("Insertion Successfully"); 
-            }else{
-                echo("Insertion Failed");
-            };
-        }
 
         $query = $dbh->prepare(
             "SELECT * FROM producten 
             INNER JOIN categorie ON producten.idcategorie = categorie.idcategorie;");
             $result = $query->execute();
             $all = $query->fetchAll();
+
+        if(sizeof($_REQUEST) == 4){
+            if($result = $dbh -> query("UPDATE producten SET naam = '". $_REQUEST['naam'] ."', aantal = '". $_REQUEST['aantal'] ."' WHERE idproduct = '". $_REQUEST['idcategorie'] ."';")){
+                echo("Insertion Successfully");
+            }else{
+                echo("Insertion Failed");
+            };
+        }elseif(sizeof($_REQUEST) == 3){
+            if($result = $dbh -> query("INSERT INTO producten(`idproduct`, `naam`, `idcategorie`, `ean`, `aantal`) VALUES('". end($all)['idproduct'] + 1 ."', '". $_REQUEST['naam'] ."', '2', '5465813679582', '21');")){
+                echo("Insertion Successfully");
+            }else{
+                echo("Insertion Failed");
+            };
+        }
 
             foreach($all as $key => $value){
                 echo(

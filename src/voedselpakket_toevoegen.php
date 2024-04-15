@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pakketen maken</title>
+    <link rel="stylesheet" href="formstyle.css">
 </head>
 <body>
     <form action="voedselpakketen.php" method="POST">
