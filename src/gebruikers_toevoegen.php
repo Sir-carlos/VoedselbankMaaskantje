@@ -5,11 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gebruiker Toevoegen</title>
     <link rel="stylesheet" href="formstyle.css">
+    <script>
+        function validatePassword() {
+            var password = document.getElementById("wachtwoord").value;
+            var confirmPassword = document.getElementById("bevestig_wachtwoord").value;
+            if (password != confirmPassword) {
+                alert("De wachtwoorden komen niet overeen!");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
     <div class="form-containersmall">
         <h2>Voeg een nieuwe gebruiker toe</h2>
-        <form action="gebruikerverwerken.php" method="post">
+        <form action="gebruikerverwerken.php" method="post" onsubmit="return validatePassword();">
             <div>
                 <div class="form-group">
                     <label for="gebruikersnaam">Gebruikersnaam:</label>
