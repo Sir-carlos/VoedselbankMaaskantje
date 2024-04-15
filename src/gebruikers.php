@@ -10,6 +10,18 @@
 </head>
 <body>
     <h1>Gebruikers</h1>
+
+    <div class="control">
+        <div class="search">
+            <input type="search" id="site-search" name="search" placeholder="Zoeken . . ." />
+        </div>
+        <div class="box">
+            <a href="gebruikers_toevoegen.php">
+            <button class="button"><img src="plusicon.svg" class="svg" width="30px">Toevoegen</button>
+            </a>
+        </div>
+    </div>
+
     <table class="content-table">
     <thead>
         <tr>

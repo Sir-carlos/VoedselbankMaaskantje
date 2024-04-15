@@ -12,40 +12,6 @@
             width: 20px;
         }
 
-        .control {
-            align-items: center;
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1rem;
-            flex-direction: row;
-            width: 80%;
-            margin: auto;
-        }
-
-        .button {
-            color: white;
-            background-color: #00BF63;
-            border: none;
-            border-radius: 5px;
-            padding: 8px 10px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .svg {
-            padding-right: 10px;
-        }
-
-        input[type=search]{
-            padding: 10px;
-            border: 1px solid #D3D3D3;
-            border-radius: 5px;
-        }
-
     </style>
 </head>
 <body>
@@ -56,9 +22,10 @@
             <input type="search" id="site-search" name="search" placeholder="Zoeken . . ." />
         </div>
         <div class="box">
+            <a href="producten_bewerken.php">
             <button class="button"><img src="plusicon.svg" class="svg" width="30px">Toevoegen</button>
+            </a>
         </div>
-        
     </div>
     
     

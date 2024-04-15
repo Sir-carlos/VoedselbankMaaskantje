@@ -17,6 +17,16 @@
 <body>
     <h1>Leveranciers</h1>
 
+    <div class="control">
+        <div class="search">
+            <input type="search" id="site-search" name="search" placeholder="Zoeken . . ." />
+        </div>
+        <div class="box">
+            <a href="leveranciers_bewerken.php">
+            <button class="button"><img src="plusicon.svg" class="svg" width="30px">Toevoegen</button>
+            </a>
+        </div>
+    </div>
     
 <table class="content-table">
     <thead>

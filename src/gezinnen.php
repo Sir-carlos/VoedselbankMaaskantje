@@ -19,6 +19,18 @@ if(!empty($_SESSION)){
     <h1>Gezinnen</h1>
 
 <table class="content-table">
+
+    <div class="control">
+        <div class="search">
+            <input type="search" id="site-search" name="search" placeholder="Zoeken . . ." />
+        </div>
+        <div class="box">
+            <a href="gezinnentoevoegen.php">
+            <button class="button"><img src="plusicon.svg" class="svg" width="30px">Toevoegen</button>
+            </a>
+        </div>
+    </div>
+
     <thead>
         <tr>
             <th>Gezinnen Naam</th>
