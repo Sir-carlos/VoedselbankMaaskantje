@@ -9,10 +9,10 @@ a{
 
 /* navigation structure styling */
 .nav{
-    background-color:    #00bf6353;
+    background-color:#00bf63b6;
     overflow: hidden;
     position: relative;
-    border-bottom: 5px solid #00BF63;
+    /* border-bottom: 2px solid #00BF63; */
 }
 
 .nav a{
@@ -24,11 +24,11 @@ a{
     transition: height 1.3s;
     float: left;
     height: auto;
-    background: linear-gradient(to top, #00BF63, #00bf6353); 
+    /* background: linear-gradient(to top, #00bf63b6, #00bf63b6);  */
     z-index: -1;
 }
 
-/* .nav a:before {
+.nav a:before {
   content: '';
   position: absolute;
   bottom: 0px;
@@ -36,19 +36,39 @@ a{
   width: 100%;
 
 
-} */
+}
 
 .nav a:hover {
   height: 100%; }
 
-/* .nav a:hover {
-  background: linear-gradient(to top, #00BF63, transparent); Gradient from bottom to top;
-   background-color: #00BF63;
+.nav a:hover {
+  /* background: linear-gradient(#00bf63); */
+   background-color: #00bf6353;
   color: black;
   transition: 0,3s;
-}  */
+} 
 
 .nav a.active {
-  background-color:  #00BF63;
+  /* background-color:  #00bf6353; */
   color: white;
+}
+
+#dark-mode { 
+  border: 0;
+  color: #000000;
+    text-align: center;
+    padding: 14px 16px !important;
+    text-decoration: none; 
+    font-size: 17px;
+    background-color: transparent;
+    transition: background-color 0.3s;
+    float: left;
+    cursor: pointer;
+}
+
+#dark-mode:hover {
+  background-color: linear-gradient(#999d9b) !important;
+  color: black;
+  transition: 0,3s;
+ 
 }
