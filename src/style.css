@@ -160,23 +160,7 @@ form{
   border-radius: 10px;
 }
 
-#dark-mode { 
-  border: 0;
-  color: #150d0d;
-    text-align: center;
-    padding: 14px 16px !important;
-    text-decoration: none; 
-    font-size: 17px;
-    transition: background-color 0.3s;
-    float: left;
-    cursor: pointer;
-}
 
-#dark-mode:hover {
-  background-color: #00bf6385;
-  color: black;
-  transition: 0,3s;
-}
 
 body {
   font-family: "Noto Sans", sans-serif;
