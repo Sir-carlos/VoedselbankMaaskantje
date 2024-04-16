@@ -50,7 +50,7 @@
         <input type="submit">
     </form>
 
-<table class="content-table">
+<table id="content-table">
     <thead>
         <tr>
             <th>Product Naam</th>
@@ -65,11 +65,23 @@
             function press(){
                 var x = document.getElementById("keuzen").value;
                 if(x === "Select"){return};
+                var table = document.getElementById("content-table");
 
-                var table = document.getElementsByClassName("content-table");
+                var f = document.getElementById("content-table").rows;
+
+                console.log(f.length);
+
+                for(let i = 0; i <= f.length; i++){
+                    //if(f[i] === x){
+                        console.log(f.item(i).cells)
+                        //table.deleteRow(i);
+                    //}
+                }
+
+                console.log(f);
 
                 var tr = document.createElement('tr');
-                table[0].appendChild(tr);
+                table.appendChild(tr);
                 
                 var n = document.createElement('td')
                 tr.appendChild(n);
@@ -80,8 +92,11 @@
                 var aa = document.createElement("input")
                 aa.setAttribute("type", "text")
                 tr.appendChild(aa);
-                var ac = document.createElement('td')
-                tr.appendChild(ac);
+                var knop = document.createElement('a')
+                /*knop.onclick = function () {
+
+                }*/
+                tr.appendChild(knop);
 
                 var g = document.createTextNode(x);
                 n.appendChild(g);
