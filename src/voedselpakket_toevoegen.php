@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pakketen maken</title>
+    <link rel="stylesheet" href="formstyle.css">
 </head>
 <body>
     <form action="voedselpakketen.php" method="POST">
@@ -30,7 +31,8 @@
         <br>
 
         <label for="familie">Selecteer Producten</label>
-        <select>
+        <select id="keuzen" onchange="press()">
+        <option>Select</option>
         <?php
                 $query = $dbh->prepare(
                     "SELECT * FROM producten;");
@@ -60,12 +62,41 @@
     </thead>
     <tbody>
         <script>
-            function add(data){
+            function press(){
+                var x = document.getElementById("keuzen").value;
+                if(x === "Select"){return};
+
+                var table = document.getElementsByClassName("content-table");
+
                 var tr = document.createElement('tr');
+                table[0].appendChild(tr);
                 
-                var td = document.createElement('td');
-                
-                  
+                var n = document.createElement('td')
+                tr.appendChild(n);
+                var c = document.createElement('td')
+                tr.appendChild(c);
+                var ea = document.createElement('td')
+                tr.appendChild(ea);
+                var aa = document.createElement("input")
+                aa.setAttribute("type", "text")
+                tr.appendChild(aa);
+                var ac = document.createElement('td')
+                tr.appendChild(ac);
+
+                var g = document.createTextNode(x);
+                n.appendChild(g);
+
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onload = function() {   
+                var info = JSON.parse(this.response);
+                console.log(info);
+                var cat = document.createTextNode(info[6]);
+                c.appendChild(cat);
+                var ean = document.createTextNode(info[3]);
+                ea.appendChild(ean);
+            }
+                xmlhttp.open("GET", "prods_ajax.php?q=" + x, true);
+                xmlhttp.send();
             }
         </script>  
     </tbody>
