@@ -19,14 +19,11 @@
 
     <div class="control">
         <div class="search">
-        <form action="" method="GET">
-            <input type="search" name="search" value="<?php if(isset($_GET['search'])){echo $_GET['search']; } ?>" placeholder="Zoeken . . ." />
-            <button type="submit" class="zoekbutton">Zoek</button>
-        </form>
+            <input type="search" id="site-search" name="search" placeholder="Zoeken . . ." />
         </div>
         <div class="box">
             <a href="producten_bewerken.php">
-            <button class="toevoegbutton"><img src="plusicon.svg" class="svg" width="30px">Toevoegen</button>
+            <button class="button"><img src="plusicon.svg" class="svg" width="30px">Toevoegen</button>
             </a>
         </div>
     </div>
@@ -69,34 +66,6 @@
                     </tr>'
                   );
             };
-
-            if(isset($_GET['search'])) {
-
-                $filtervalues = $_GET['search'];
-                $query = "SELECT * FROM producten WHERE CONCAT(naam, ean) LIKE '%$filtervalues%' ";
-                $query_run = mysqli_query($dbh, $query);
-
-                if(mysqli_num_rows($query_run) > 0){
-                    foreach($query_run as $items){
-                       ?>
-                       <tr>
-                            <td><?= $items['naam']; ?></td>
-                            <td><?= $items['ean']; ?></td>
-                        </tr>
-                       <?php
-                    }
-
-                } else {
-
-                    ?>
-                    <tr>
-                        <td colspan="5">Geen zoekresultaten gevonden.</td>
-                    </tr>
-
-                    <?php
-
-                }
-            }
         ?>
     </tbody>
 </table>

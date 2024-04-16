@@ -22,7 +22,7 @@ body.dark-mode {
   margin: auto;
 }
 
-.toevoegbutton {
+.button {
   color: white;
   background-color: #00BF63;
   border: none;
@@ -36,19 +36,7 @@ body.dark-mode {
   justify-content: space-between;
 }
 
-.zoekbutton {
-  padding: 10px;
-  border: 1px solid #D3D3D3;
-  background-color: white;
-  border-radius: 5px;
-}
-
-.zoekbutton:hover {
-  cursor: pointer;
-  background-color: #D3D3D3;
-}
-
-.toevoegbutton:hover {
+button:hover {
   cursor: pointer;
   background-color: #00934c;
 }
