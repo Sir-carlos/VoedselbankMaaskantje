@@ -36,7 +36,7 @@ body.dark-mode {
   justify-content: space-between;
 }
 
-button:hover {
+.button:hover {
   cursor: pointer;
   background-color: #00934c;
 }
