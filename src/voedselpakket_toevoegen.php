@@ -52,6 +52,8 @@
         </form>
     </div>
 
+
+<div class="form-wrapperr">
     <table class="content-table">
         <thead>
             <tr>
@@ -103,6 +105,7 @@
             </script>  
         </tbody>
     </table>
+    </div>
 </body>
     <script src="script.js"></script>
 </html>

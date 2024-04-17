@@ -11,6 +11,13 @@ body {
     align-items: center;
     min-height: 100vh;
 }
+.form-wrapperr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 1px;
+    margin-top: -280px;
+}
 
 .form-container {
     background-color: #fff;
