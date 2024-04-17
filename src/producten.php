@@ -24,7 +24,6 @@
         <div class="box">
             <a class="button" href="producten_toevoegen"><img src="plusicon.svg" class="svg" width="30px">Toevoegen</a>
         </div>
-        
     </div>
     
     
