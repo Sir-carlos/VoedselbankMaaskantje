@@ -12,9 +12,12 @@
         <h1>Voedselpakket Samenstelling</h1>
 
         <br>
+        
+        <p id="wensen"></p>
 
         <label for="familie">Familie:</label>
         <select>
+        <option>Select</option>
         <?php
                 $query = $dbh->prepare(
                     "SELECT * FROM klanten;");
@@ -67,19 +70,6 @@
                 if(x === "Select"){return};
                 var table = document.getElementById("content-table");
 
-                var f = document.getElementById("content-table").rows;
-
-                console.log(f.length);
-
-                for(let i = 0; i <= f.length; i++){
-                    //if(f[i] === x){
-                        console.log(f.item(i).cells)
-                        //table.deleteRow(i);
-                    //}
-                }
-
-                console.log(f);
-
                 var tr = document.createElement('tr');
                 table.appendChild(tr);
                 
@@ -89,14 +79,25 @@
                 tr.appendChild(c);
                 var ea = document.createElement('td')
                 tr.appendChild(ea);
-                var aa = document.createElement("input")
-                aa.setAttribute("type", "text")
-                tr.appendChild(aa);
-                var knop = document.createElement('a')
-                /*knop.onclick = function () {
 
-                }*/
-                tr.appendChild(knop);
+                var aan = document.createElement('td')
+                tr.appendChild(aan);
+                var aai = document.createElement("input")
+                aai.setAttribute("type", "text")
+                aan.appendChild(aai);
+
+                var knoptd = document.createElement('td')
+                tr.appendChild(knoptd);
+                var knop = document.createElement('button')
+                knoptd.appendChild(knop);   
+                knop.onclick = function (knop) {
+                    var prodnaam = knoptd.parentNode.cells[0].firstChild.data;
+                    for(let i = 1; i < f.length; i++){
+                    if(f[i].cells[0].firstChild.data === prodnaam){
+                        table.deleteRow(i);
+                        }
+                    }
+                }
 
                 var g = document.createTextNode(x);
                 n.appendChild(g);
@@ -104,7 +105,7 @@
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onload = function() {   
                 var info = JSON.parse(this.response);
-                console.log(info);
+                //console.log(info);
                 var cat = document.createTextNode(info[6]);
                 c.appendChild(cat);
                 var ean = document.createTextNode(info[3]);
@@ -112,7 +113,9 @@
             }
                 xmlhttp.open("GET", "prods_ajax.php?q=" + x, true);
                 xmlhttp.send();
-            }
+
+                var f = document.getElementById("content-table").rows;
+        }
         </script>  
     </tbody>
 </table>
