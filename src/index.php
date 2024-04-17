@@ -10,21 +10,24 @@
 <body>
 
     <h1>Home</h1>
+    <div class="img">
+    <img src="Voedselbankje.jpg" alt="Voedselbank Maaskantje">
+    </div>
     <p>Lorem ipsum dolor sit amet</p>
     <div class="button-container">
 
 
 
-<button class="main-button" role="button">Button</button>
-<button class="main-button" role="button">Button</button>
+
 </div>
     
     <div class="button-container">
 
     <?php
     if(isset($_SESSION['loggedin'])){
-        echo("Logged in <br><br>");
-        print_r($_SESSION);
+        echo("Welkom ");
+        print_r($_SESSION['name']);
+        echo("!");
     };
     ?>
 

@@ -4,6 +4,7 @@
 body {
   background-color: #ffffff; 
   color: #000000; 
+  
 }
 
 /* Dark Mode Styles */
@@ -22,6 +23,12 @@ body.dark-mode {
   margin: auto;
 }
 
+div img {
+width: 50%;
+/* margin-right: 300px; */
+}
+
+/* img{} */
 .button {
   color: white;
   background-color: #00BF63;
