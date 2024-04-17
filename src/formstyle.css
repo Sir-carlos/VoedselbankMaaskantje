@@ -65,15 +65,27 @@ body {
 }
 
 button {
-    display: block;
-    width: 100%;
+    display: block !important;
+    width: 100% !important;
     padding: 10px;
-    background-color: #4CAF50; /* Groene kleur */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    background-color: #4CAF50 !important; /* Groene kleur */
+    color: #fff !important;
+    border: none !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.buttonz {
+    display: block !important;
+    width: 100% !important;
+    padding: 10px;
+    background-color: #4CAF50 !important; /* Groene kleur */
+    color: #fff !important;
+    border: none !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease !important;
 }
 
 button:hover {

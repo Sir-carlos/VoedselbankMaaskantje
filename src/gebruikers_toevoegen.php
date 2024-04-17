@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
+<?php include 'header.php'; require_once 'database.php'; ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +19,7 @@
     </script>
 </head>
 <body>
+    <div class="form-wrapper">
     <div class="form-containersmall">
         <h2>Voeg een nieuwe gebruiker toe</h2>
         <form action="gebruikerverwerken.php" method="post" onsubmit="return validatePassword();">
@@ -48,6 +50,7 @@
             </div>
             <button type="submit">Toevoegen</button>
         </form>
+    </div>
     </div>
 </body>
 </html>
