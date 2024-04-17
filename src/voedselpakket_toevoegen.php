@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="formstyle.css">
 </head>
 <body>
-    <div class="form-wrapper">
-        <form class="form-containersmall" action="voedselpakketen.php" method="POST">
-            <h1>Voedselpakket Samenstelling</h1>
+    <form action="voedselpakketen.php" method="POST">
+        <h1>Voedselpakket Samenstelling</h1>
 
         <br>
         
@@ -99,6 +98,9 @@
                         }
                     }
                 }
+
+                var g = document.createTextNode(x);
+                n.appendChild(g);
 
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onload = function() {   
