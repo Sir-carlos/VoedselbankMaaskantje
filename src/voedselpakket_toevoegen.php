@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="formstyle.css">
 </head>
 <body>
-    <form action="voedselpakketen.php" method="POST">
+    <!--<form action="voedselpakketen.php" method="POST">-->
         <h1>Voedselpakket Samenstelling</h1>
 
         <br>
@@ -50,7 +50,7 @@
         <br>
         <br>
 
-        <input type="submit">
+        <button id='send' onclick="submit()">Submit</button>
     </form>
 
 <table id="content-table">
@@ -105,7 +105,7 @@
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onload = function() {   
                 var info = JSON.parse(this.response);
-                //console.log(info);
+
                 var cat = document.createTextNode(info[6]);
                 c.appendChild(cat);
                 var ean = document.createTextNode(info[3]);
@@ -120,13 +120,30 @@
             var x = document.getElementById("keuzen_f").value;
 
             var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onload = function() {  
-                console.log(this)
+                xmlhttp.onload = function() {
                 var info = JSON.parse(this.response);
-                console.log(info);
             }
                 xmlhttp.open("GET", "wensen_ajax.php?q=" + x, true);
                 xmlhttp.send();
+        }
+        function submit(){
+            var table = document.getElementById("content-table").rows;
+            //var test = document.getElementById("content-table").rows[1].cells[3].firstChild.value;
+            
+            var arr = [];
+            for(let i = 1; i < table.length; i++){
+                arr.push({ naam: document.getElementById("keuzen_f").value, product: document.getElementById("content-table").rows[i].cells[0].firstChild.data, aantal: document.getElementById("content-table").rows[i].cells[3].firstChild.value});
+                //arr.push(document.getElementById("content-table").rows[i].cells[3].firstChild.value);
+            }
+            //console.log(document.getElementById("content-table").rows[1].cells[0].firstChild.data);
+
+            var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onload = function() {
+                }
+                xmlhttp.open("GET", "send_ajax.php?q=" + JSON.stringify(arr), true);
+                xmlhttp.send();
+                
+                window.location.replace("http://localhost/examproj/VoedselbankMaaskantje/src/voedselpakketen.php");
         }
         </script>  
     </tbody>
