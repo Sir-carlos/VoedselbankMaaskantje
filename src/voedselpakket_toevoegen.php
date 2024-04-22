@@ -143,6 +143,7 @@
                 xmlhttp.open("GET", "send_ajax.php?q=" + JSON.stringify(arr), true);
                 xmlhttp.send();
                 
+                window.location.replace("http://localhost/examproj/VoedselbankMaaskantje/src/voedselpakketen.php");
         }
         </script>  
     </tbody>
