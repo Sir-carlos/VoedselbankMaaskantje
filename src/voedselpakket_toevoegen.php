@@ -16,7 +16,7 @@
         <p id="wensen"></p>
 
         <label for="familie">Familie:</label>
-        <select>
+        <select id="keuzen_f" onchange="wensen()">
         <option>Select</option>
         <?php
                 $query = $dbh->prepare(
@@ -33,8 +33,8 @@
         <br>
         <br>
 
-        <label for="familie">Selecteer Producten</label>
-        <select id="keuzen" onchange="press()">
+        <label for="prod">Selecteer Producten</label>
+        <select id="keuzen_p" onchange="press()">
         <option>Select</option>
         <?php
                 $query = $dbh->prepare(
@@ -66,7 +66,7 @@
     <tbody>
         <script>
             function press(){
-                var x = document.getElementById("keuzen").value;
+                var x = document.getElementById("keuzen_p").value;
                 if(x === "Select"){return};
                 var table = document.getElementById("content-table");
 
@@ -115,6 +115,18 @@
                 xmlhttp.send();
 
                 var f = document.getElementById("content-table").rows;
+        }
+        function wensen(){
+            var x = document.getElementById("keuzen_f").value;
+
+            var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onload = function() {  
+                console.log(this)
+                var info = JSON.parse(this.response);
+                console.log(info);
+            }
+                xmlhttp.open("GET", "wensen_ajax.php?q=" + x, true);
+                xmlhttp.send();
         }
         </script>  
     </tbody>
