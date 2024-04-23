@@ -10,19 +10,7 @@
 <body>
 
     <h1>Home</h1>
-    <div class="img">
-    <img src="Voedselbankje.jpg" alt="Voedselbank Maaskantje">
-    </div>
-    <p>Lorem ipsum dolor sit amet</p>
-    <div class="button-container">
-
-
-
-
-</div>
-    
-    <div class="button-container">
-
+    <div class="home-container">
     <?php
     if(isset($_SESSION['loggedin'])){
         echo("Welkom ");
@@ -30,12 +18,10 @@
         echo("!");
     };
     ?>
+    <img src="Voedselbankje.webp" alt="Voedselbank Maaskantje">
+    </div>
 
-
-<br>
-
-
-</div>
+    <p>Lorem ipsum dolor sit amet</p>
 
 </body>
     <script src="script.js"></script>

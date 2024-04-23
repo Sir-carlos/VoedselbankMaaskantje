@@ -23,12 +23,21 @@ body.dark-mode {
   margin: auto;
 }
 
-div img {
-width: 50%;
-/* margin-right: 300px; */
+.home-container {
+/* width: 50%; */
+display: flex !important;
+flex-direction: column;
+  justify-content: space-between; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-bottom: 50px;  
 }
 
-/* img{} */
+.home-container img {
+  width: 50%;
+  padding-top: 20px;
+}
+
+
 .button {
   color: white;
   background-color: #00BF63;
@@ -60,7 +69,7 @@ input[type=search]{
 
 /* Heading styling */
 h1{
-  padding: 100px 0px 50px;
+  padding: 50px 0px 50px;
   text-align: center;
 }
 
