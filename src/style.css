@@ -210,3 +210,11 @@ body {
 .content-table tbody tr {
   border-bottom: 1px solid #dddddd;
 }
+
+.container{
+  background-color: rgba(70, 94, 114, 0.726);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 20px;
+}
