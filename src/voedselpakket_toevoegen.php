@@ -142,7 +142,6 @@
             var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onload = function() {
                 }
-<<<<<<< HEAD
                 xmlhttp.open("GET", "send_ajax.php?q=" + JSON.stringify(arr), true);
                 xmlhttp.send();
                 
@@ -151,12 +150,7 @@
         </script>  
     </tbody>
 </table>
-=======
-            </script>  
-        </tbody>
-    </table>
-    </div>
->>>>>>> Karsten
+</div>
 </body>
     <script src="script.js"></script>
 </html>
