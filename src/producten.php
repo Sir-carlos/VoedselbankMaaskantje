@@ -19,7 +19,7 @@
 
     <div class="control">
         <div class="search">
-            <input type="search" id="site-search" name="search" placeholder="Zoeken . . ." />
+            <input type="search" id="site-search" name="search" onkeyup="search(this.value)" placeholder="Zoeken . . ." />
         </div>
         <div class="box">
             <a class="button" href="producten_toevoegen"><img src="plusicon.svg" class="svg" width="30px">Toevoegen</a>
@@ -74,7 +74,16 @@
         ?>
     </tbody>
 </table>
-
+        <script>
+            function search(value){
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    console.log(this.response);
+            }
+                xmlhttp.open("GET", "search_ajax.php?q=" + value, true);
+                xmlhttp.send();
+            }
+        </script>
 </body>
     <script src="script.js"></script>
 </html>
