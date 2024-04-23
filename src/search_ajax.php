@@ -1,19 +1,23 @@
-<?php require_once 'database.php';
+<?php
+// Databaseverbinding
+include 'database.php';
 
-$query = $dbh->prepare(
-    "SELECT * FROM producten 
-    INNER JOIN categorie ON producten.idcategorie = categorie.idcategorie;");
-    $result = $query->execute();
-    $all = $query->fetchAll();
+// Ontvang zoekterm
+$searchTerm = $_GET['q'];
 
-foreach($all as $key => $value){
-    echo(
-        "<tr>
-        <td>" . $value["1"] . "</td>
-        <td>" . $value["6"] . "</td>
-        <td>" . $value["ean"] . "</td>
-        <td>" . $value["aantal"] . '</td>
-        <td> <a href="producten_bewerken.php?q='. $key .'"><img src="bewerken.png" class="bimg" onclick="sendkey($key)"></a> </td>
-        </tr>'
-      );
-};
+// Bereid de query voor (let op: voorkom SQL-injectie)
+$query = $dbh->prepare("SELECT * FROM producten WHERE naam LIKE ?");
+$query->execute(["%$searchTerm%"]);
+$results = $query->fetchAll();
+
+// Toon resultaten
+foreach ($results as $result) {
+    echo "<tr>
+            <td>" . $result["naam"] . "</td>
+            <td>" . $result["idcategorie"] . "</td>
+            <td>" . $result["ean"] . "</td>
+            <td>" . $result["aantal"] . "</td>
+            <td> <a href='producten_bewerken.php?q=$result[idproduct]'><img src='bewerken.png' class='bimg' onclick='sendkey($result[idproduct])'></a> </td>
+        </tr>";
+}
+?>
