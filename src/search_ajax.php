@@ -11,13 +11,13 @@ $query->execute(["%$searchTerm%"]);
 $results = $query->fetchAll();
 
 // Toon resultaten
-foreach ($results as $result) {
+foreach ($results as $key => $result) {
     echo "<tr>
             <td>" . $result["naam"] . "</td>
             <td>" . $result["idcategorie"] . "</td>
             <td>" . $result["ean"] . "</td>
             <td>" . $result["aantal"] . "</td>
-            <td> <a href='producten_bewerken.php?q=$result[idproduct]'><img src='bewerken.png' class='bimg' onclick='sendkey($result[idproduct])'></a> </td>
+            <td> <a href='producten_bewerken.php?q=". $result['idproduct']-1 ."'><img src='bewerken.png' class='bimg' onclick='sendkey($result[idproduct])'></a> </td>
         </tr>";
 }
 ?>
