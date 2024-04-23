@@ -22,7 +22,7 @@
             <input type="search" id="site-search" name="search" placeholder="Zoeken . . ." />
         </div>
         <div class="box">
-            <a href="leveranciers_bewerken.php">
+            <a href="leveranciers_toevoegen.php">
             <button class="button"><img src="plusicon.svg" class="svg" width="30px">Toevoegen</button>
             </a>
         </div>
