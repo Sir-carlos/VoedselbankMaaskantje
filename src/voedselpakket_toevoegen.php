@@ -8,50 +8,53 @@
     <link rel="stylesheet" href="formstyle.css">
 </head>
 <body>
-    <div class="form-wrapper">
-        <form class="form-containersmall" action="voedselpakketen.php" method="POST">
-            <h1>Voedselpakket Samenstelling</h1>
+    <!--<form action="voedselpakketen.php" method="POST">-->
+        <h1>Voedselpakket Samenstelling</h1>
 
-            <br>
+        <br>
+        
+        <p id="wensen"></p>
 
-            <label for="familie">Familie:</label>
-            <select id="familie" class="form-select">
-            <?php
-                    $query = $dbh->prepare(
-                        "SELECT * FROM klanten;");
-                        $result = $query->execute();
-                        $all = $query->fetchAll();
-                
-                    foreach($all as $key => $value){
-                        echo('<option value="'. $value['naam'] .'">'. $value['naam'] .'</option>');
-                    };  echo("</select>");
-                ?>
-
+        <label for="familie">Familie:</label>
+        <select id="keuzen_f" onchange="wensen()">
+        <option>Select</option>
+        <?php
+                $query = $dbh->prepare(
+                    "SELECT * FROM klanten;");
+                    $result = $query->execute();
+                    $all = $query->fetchAll();
             
-            <br>
-            <br>
+                foreach($all as $key => $value){
+                    echo('<option value="'. $value['naam'] .'">'. $value['naam'] .'</option>');
+                };  echo("</select>");
+            ?>
 
-            <label for="familie">Selecteer Producten</label>
-            <select id="keuzen" onchange="press()" class="form-select">
-            <option>Select</option>
-            <?php
-                    $query = $dbh->prepare(
-                        "SELECT * FROM producten;");
-                        $result = $query->execute();
-                        $all = $query->fetchAll();
-                
-                    foreach($all as $key => $value){
-                        echo('<option value="'. $value['naam'] .'">'. $value['naam'] .'</option>');
-                    };  echo("</select>");
-                ?>
+        
+        <br>
+        <br>
+
+        <label for="prod">Selecteer Producten</label>
+        <select id="keuzen_p" onchange="press()">
+        <option>Select</option>
+        <?php
+                $query = $dbh->prepare(
+                    "SELECT * FROM producten;");
+                    $result = $query->execute();
+                    $all = $query->fetchAll();
             
-            <br>
-            <br>
+                foreach($all as $key => $value){
+                    echo('<option value="'. $value['naam'] .'">'. $value['naam'] .'</option>');
+                };  echo("</select>");
+            ?>
+        
+        <br>
+        <br>
 
-            <input type="submit" class="buttonz">
-        </form>
-    </div>
+        <button id='send' onclick="submit()">Submit</button>
+    </form>
 
+
+<div class="form-wrapperr">
     <table class="content-table">
         <thead>
             <tr>
@@ -65,44 +68,89 @@
         <tbody>
             <script>
                 function press(){
-                    var x = document.getElementById("keuzen").value;
-                    if(x === "Select"){return};
+                    var x = document.getElementById("keuzen_p").value;
+                if(x === "Select"){return};
+                var table = document.getElementById("content-table");
 
-                    var table = document.querySelector(".content-table tbody");
+                var tr = document.createElement('tr');
+                table.appendChild(tr);
+                
+                var n = document.createElement('td')
+                tr.appendChild(n);
+                var c = document.createElement('td')
+                tr.appendChild(c);
+                var ea = document.createElement('td')
+                tr.appendChild(ea);
 
-                    var tr = document.createElement('tr');
-                    table.appendChild(tr);
-                    
-                    var n = document.createElement('td')
-                    tr.appendChild(n);
-                    var c = document.createElement('td')
-                    tr.appendChild(c);
-                    var ea = document.createElement('td')
-                    tr.appendChild(ea);
-                    var aa = document.createElement("input")
-                    aa.setAttribute("type", "text")
-                    tr.appendChild(aa);
-                    var ac = document.createElement('td')
-                    tr.appendChild(ac);
+                var aan = document.createElement('td')
+                tr.appendChild(aan);
+                var aai = document.createElement("input")
+                aai.setAttribute("type", "text")
+                aan.appendChild(aai);
 
-                    var g = document.createTextNode(x);
-                    n.appendChild(g);
-
-                    var xmlhttp = new XMLHttpRequest();
-                    xmlhttp.onload = function() {   
-                    var info = JSON.parse(this.response);
-                    console.log(info);
-                    var cat = document.createTextNode(info[6]);
-                    c.appendChild(cat);
-                    var ean = document.createTextNode(info[3]);
-                    ea.appendChild(ean);
+                var knoptd = document.createElement('td')
+                tr.appendChild(knoptd);
+                var knop = document.createElement('button')
+                knoptd.appendChild(knop);   
+                knop.onclick = function (knop) {
+                    var prodnaam = knoptd.parentNode.cells[0].firstChild.data;
+                    for(let i = 1; i < f.length; i++){
+                    if(f[i].cells[0].firstChild.data === prodnaam){
+                        table.deleteRow(i);
+                        }
+                    }
                 }
-                    xmlhttp.open("GET", "prods_ajax.php?q=" + x, true);
-                    xmlhttp.send();
+
+                var g = document.createTextNode(x);
+                n.appendChild(g);
+
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onload = function() {   
+                var info = JSON.parse(this.response);
+
+                var cat = document.createTextNode(info[6]);
+                c.appendChild(cat);
+                var ean = document.createTextNode(info[3]);
+                ea.appendChild(ean);
+            }
+                xmlhttp.open("GET", "prods_ajax.php?q=" + x, true);
+                xmlhttp.send();
+
+                var f = document.getElementById("content-table").rows;
+        }
+        function wensen(){
+            var x = document.getElementById("keuzen_f").value;
+
+            var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onload = function() {
+                var info = JSON.parse(this.response);
+            }
+                xmlhttp.open("GET", "wensen_ajax.php?q=" + x, true);
+                xmlhttp.send();
+        }
+        function submit(){
+            var table = document.getElementById("content-table").rows;
+            //var test = document.getElementById("content-table").rows[1].cells[3].firstChild.value;
+            
+            var arr = [];
+            for(let i = 1; i < table.length; i++){
+                arr.push({ naam: document.getElementById("keuzen_f").value, product: document.getElementById("content-table").rows[i].cells[0].firstChild.data, aantal: document.getElementById("content-table").rows[i].cells[3].firstChild.value});
+                //arr.push(document.getElementById("content-table").rows[i].cells[3].firstChild.value);
+            }
+            //console.log(document.getElementById("content-table").rows[1].cells[0].firstChild.data);
+
+            var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onload = function() {
                 }
-            </script>  
-        </tbody>
-    </table>
+                xmlhttp.open("GET", "send_ajax.php?q=" + JSON.stringify(arr), true);
+                xmlhttp.send();
+                
+                window.location.replace("http://localhost/examproj/VoedselbankMaaskantje/src/voedselpakketen.php");
+        }
+        </script>  
+    </tbody>
+</table>
+</div>
 </body>
     <script src="script.js"></script>
 </html>
