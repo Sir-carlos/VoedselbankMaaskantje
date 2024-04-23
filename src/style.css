@@ -13,6 +13,20 @@ body.dark-mode {
   color: #ffffff; 
 }
 
+.home-container {
+
+  display: flex !important;
+  flex-direction: column-reverse;
+    justify-content: space-between; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-bottom: 50px;  
+  }
+  
+  .home-container img {
+    width: 50%;
+    padding-bottom: 20px;
+  }
+
 .control {
   align-items: center;
   display: flex;
@@ -52,7 +66,7 @@ flex-direction: column;
   justify-content: space-between;
 }
 
-button:hover {
+.button:hover {
   cursor: pointer;
   background-color: #00934c;
 }

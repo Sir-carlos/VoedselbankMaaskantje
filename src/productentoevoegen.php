@@ -10,7 +10,7 @@
     <div class="form-containersmall">
         <h2>Vul het formulier in</h2>
         <form action="verwerk_formulier.php" method="post">
-            <div>
+            <div class="form-wrapper">
                 <div class="form-group">
                     <label for="ean">EAN:</label>
                     <input type="text" id="ean" name="ean" required>

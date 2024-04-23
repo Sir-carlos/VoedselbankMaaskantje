@@ -17,7 +17,14 @@
 <body>
     <h1>Voedselpakketen</h1>
 
-    <a href="voedselpakket_toevoegen.php">Toevoegen</a>
+    <div class="control">
+        <div class="search">
+            <input type="search" id="site-search" name="search" placeholder="Zoeken . . ." />
+        </div>
+        <div class="box">
+            <a class="button" href="voedselpakket_toevoegen.php"><img src="plusicon.svg" class="svg" width="30px">Toevoegen</a>
+        </div>
+    </div>
     
 <table class="content-table">
     <thead>

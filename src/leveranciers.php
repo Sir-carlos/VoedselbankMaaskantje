@@ -22,7 +22,7 @@
             <input type="search" id="site-search" name="search" placeholder="Zoeken . . ." />
         </div>
         <div class="box">
-            <a href="leveranciers_bewerken.php">
+            <a href="leveranciers_toevoegen.php">
             <button class="button"><img src="plusicon.svg" class="svg" width="30px">Toevoegen</button>
             </a>
         </div>
@@ -57,10 +57,12 @@
                     <td>" . $value["Postcode"] . "</td>
                     <td>" . $value["telefoonnummer"] . "</td>
                     <td>" . $value["Volgende levering"] . '</td>
+                    <td> <a href="leveranciers_bewerken.php?q='. $key .'"><img src="bewerken.png" class="bimg" onclick="sendkey($key)"></a> </td>
                     </tr>'
                   );
             };
 
+        
             if(!empty($_REQUEST)){
             //$sql = "UPDATE producten SET naam = '". $_REQUEST['naam'] ."', ean = '". $_REQUEST['ean'] ."', aantal = '". $_REQUEST['aantal'] ."' WHERE idproduct = '". $_REQUEST['q'] ."';";
 
