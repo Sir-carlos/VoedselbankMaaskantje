@@ -78,7 +78,8 @@
             function search(value){
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
-                    console.log(this.response);
+                    //console.log(this.response);
+                    
             }
                 xmlhttp.open("GET", "search_ajax.php?q=" + value, true);
                 xmlhttp.send();
