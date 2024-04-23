@@ -40,8 +40,6 @@ if (!empty($eis)) {
     $eis_toevoegen = $custom_eis;
 }
 
-// SQL-query om de gegevens in te voegen
-// SQL-query om de gegevens in te voegen
 // SQL-query om de gegevens in te voegen in klanten
 $sql_klanten = "INSERT INTO klanten (idklanten, naam, adres, postcode, telefoonnummer, email, volwassen, kinderen, `baby's`) 
         VALUES (:id, :naam, :adres, :postcode, :telefoonnummer, :email, :volwassen, :kinderen, :babys)";
@@ -78,25 +76,26 @@ $last_id = $last_id_row['last_id'];
 // Verhoog het ID met 1 voor de nieuwe klant
 $new_id = $last_id + 1;
 
-// Nu voegen we de eisen toe aan de tabel eisen_has_klanten
-// SQL-query om de eisen in te voegen in eisen_has_klanten
-$sql_eisen = "INSERT INTO eisen_has_klanten (eisen_ideisen, klanten_idklanten) 
-              VALUES (:eis_id, :klant_id)";
+// Nu voegen we de aangepaste eis toe aan de tabel klant_eigen_eisen
+// SQL-query om de aangepaste eis in te voegen in klant_eigen_eisen
+$sql_custom_eis = "INSERT INTO klant_eigen_eisen (klant_id, eis) 
+              VALUES (:klant_id, :custom_eis)";
 
-// Voorbereiden van de SQL-statement voor eisen
-$stmt_eisen = $dbh->prepare($sql_eisen);
+// Voorbereiden van de SQL-statement voor aangepaste eis
+$stmt_custom_eis = $dbh->prepare($sql_custom_eis);
 
-// Binding van parameters voor eisen
-$stmt_eisen->bindParam(':eis_id', $eis_toevoegen); // De ID van de eis
-$stmt_eisen->bindParam(':klant_id', $last_id); // Het ID van de klant
+// Binding van parameters voor aangepaste eis
+$stmt_custom_eis->bindParam(':klant_id', $last_id); // Het ID van de klant
+$stmt_custom_eis->bindParam(':custom_eis', $custom_eis); // De aangepaste eis
 
-// Uitvoeren van de SQL-statement voor eisen
+// Uitvoeren van de SQL-statement voor aangepaste eis
 try {
-    $stmt_eisen->execute();
-    echo " Eisen succesvol toegevoegd";
+    $stmt_custom_eis->execute();
+    echo "Aangepaste eis succesvol toegevoegd voor klant met ID: " . $last_id;
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
+
 
 
 // Sluit de databaseverbinding
