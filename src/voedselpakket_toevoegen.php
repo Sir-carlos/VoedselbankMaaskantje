@@ -6,19 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pakketen maken</title>
     <link rel="stylesheet" href="formstyle.css">
-    <link rel="stylesheet" href="style.css">
-
     <style>
         #container{
-            background-color: rgba(70, 94, 114, 0.726);
+            background-color: rgba(255, 99, 71, 0.5);
             border: 1px solid rgba(0, 0, 0, 0.8);
             border-radius: 20px;
             box-sizing: border-box;
             padding: 20px;
+            position: absolute;
+        }
+
+        .form-wrapper {
+            margin-top: -200px;
+        }
+        .form-wrapperr {
+            margin-top: -200px;
         }
     </style>
 </head>
 <body>
+    <div id="container">
+    </div>
+
+    <div class="form-wrapper">
+        <div class="form-containersmall">
         <h1>Voedselpakket Samenstelling</h1>
 
         <br>
@@ -26,7 +37,7 @@
         <p id="wensen"></p>
 
         <label for="familie">Familie:</label>
-        <select id="keuzen_f" onchange="wensen()">
+        <select id="keuzen_f" onchange="wensen()" class="form-select">
         <option>Select</option>
         <?php
                 $query = $dbh->prepare(
@@ -44,7 +55,7 @@
         <br>
 
         <label for="prod">Selecteer Producten</label>
-        <select id="keuzen_p" onchange="press()">
+        <select id="keuzen_p" onchange="press()" class="form-select">
         <option>Select</option>
         <?php
                 $query = $dbh->prepare(
@@ -61,8 +72,7 @@
         <br>
 
         <button id='send' onclick="submit()">Submit</button>
-
-    <div id="container">
+        </div>
     </div>
 
 <div class="form-wrapperr">
