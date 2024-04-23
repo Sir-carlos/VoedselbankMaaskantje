@@ -53,20 +53,22 @@
         <button id='send' onclick="submit()">Submit</button>
     </form>
 
-<table id="content-table">
-    <thead>
-        <tr>
-            <th>Product Naam</th>
-            <th>Categorie</th>
-            <th>EAN</th>
-            <th>Aantal</th>
-            <th>Acties</th>
-        </tr>
-    </thead>
-    <tbody>
-        <script>
-            function press(){
-                var x = document.getElementById("keuzen_p").value;
+
+<div class="form-wrapperr">
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Product Naam</th>
+                <th>Categorie</th>
+                <th>EAN</th>
+                <th>Aantal</th>
+                <th>Acties</th>
+            </tr>
+        </thead>
+        <tbody>
+            <script>
+                function press(){
+                    var x = document.getElementById("keuzen_p").value;
                 if(x === "Select"){return};
                 var table = document.getElementById("content-table");
 
@@ -140,6 +142,7 @@
             var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onload = function() {
                 }
+<<<<<<< HEAD
                 xmlhttp.open("GET", "send_ajax.php?q=" + JSON.stringify(arr), true);
                 xmlhttp.send();
                 
@@ -148,6 +151,12 @@
         </script>  
     </tbody>
 </table>
+=======
+            </script>  
+        </tbody>
+    </table>
+    </div>
+>>>>>>> Karsten
 </body>
     <script src="script.js"></script>
 </html>
