@@ -20,7 +20,7 @@
             <input type="search" id="site-search" name="search" onkeyup="search(this.value)" placeholder="Zoeken . . ." />
         </div>
         <div class="box">
-            <a class="button" href="producten_toevoegen"><img src="plusicon.svg" class="svg" width="30px">Toevoegen</a>
+            <a class="button" href="producten_toevoegen.php"><img src="plusicon.svg" class="svg" width="30px">Toevoegen</a>
         </div>
     </div>
     
@@ -53,6 +53,25 @@
                     </tr>'
                   );
             };
+
+            if(sizeof($_REQUEST) == 4){
+                if($result = $dbh -> query("UPDATE producten SET naam = '". $_REQUEST['naam'] ."', aantal = '". $_REQUEST['aantal'] ."' WHERE idproduct = '". $_REQUEST['idcategorie'] ."';")){
+                    echo("Insertion Successfully");
+                }else{
+                    echo("Insertion Failed");
+                };
+            }elseif(sizeof($_REQUEST) == 3){
+                $query = $dbh->prepare(
+                    "SELECT * FROM producten;");
+                    $result = $query->execute();
+                    $prod = $query->fetchAll();
+
+                if($result = $dbh -> query("INSERT INTO producten(`idproduct`, `naam`, `idcategorie`, `ean`, `aantal`) VALUES('". end($prod)['idproduct']+1 ."', '". $_REQUEST['naam'] ."', '2', '". rand(0000000000000, 9999999999999) ."', '". $_REQUEST['aantal'] ."');")){
+                    echo("Insertion Successfully");
+                }else{
+                    echo("Insertion Failed");
+                };
+            }
             ?>
         </tbody>
     </table>

@@ -12,7 +12,8 @@
     <div class="form-wrapper">
     <?php
     $query = $dbh->prepare(
-        "SELECT * FROM producten;");
+        "SELECT * FROM producten 
+        INNER JOIN categorie ON producten.idcategorie = categorie.idcategorie;");
         $result = $query->execute();
         $all = $query->fetchAll();
 
@@ -25,7 +26,7 @@
 
         <div class="form-group"> <!-- Voeg form-group class toe -->
             <label for="naam">Naam</label>
-            <input type="text" name="naam" placeholder="Banaan" value="'. $all[$q]['naam'] .'">
+            <input type="text" name="naam" placeholder="Banaan" value="'. $all[$q]['1'] .'">
         </div>
 
         <br>
