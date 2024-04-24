@@ -51,13 +51,12 @@
             foreach($all as $key => $value){
                 echo(
                     "<tr>
-                    <td>" . $value["Bedrijf"] . "</td>
-                    <td>" . $value["Contactpersoon"] . "</td>
+                    <td>" . $value["bedrijf"] . "</td>
+                    <td>" . $value["contactpersoon"] . "</td>
                     <td>" . $value["email"] . "</td>
-                    <td>" . $value["Postcode"] . "</td>
+                    <td>" . $value["postcode"] . "</td>
                     <td>" . $value["telefoonnummer"] . "</td>
-                    <td>" . $value["Volgende levering"] . '</td>
-                    <td> <a href="leveranciers_bewerken.php?q='. $key .'"><img src="bewerken.png" class="bimg" onclick="sendkey($key)"></a> </td>
+                    <td>" . $value["volgende levering"] . '</td>
                     </tr>'
                   );
             };

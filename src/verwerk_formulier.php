@@ -41,8 +41,8 @@ if (!empty($eis)) {
 }
 
 // SQL-query om de gegevens in te voegen in klanten
-$sql_klanten = "INSERT INTO klanten (idklanten, naam, adres, postcode, telefoonnummer, email, volwassen, kinderen, `baby's`) 
-        VALUES (:id, :naam, :adres, :postcode, :telefoonnummer, :email, :volwassen, :kinderen, :babys)";
+$sql_klanten = "INSERT INTO klanten (idklanten, naam, adres, postcode, telefoonnummer, email, volwassen, kinderen, `baby's`, `spec_wensen`) 
+        VALUES (:id, :naam, :adres, :postcode, :telefoonnummer, :email, :volwassen, :kinderen, :babys, :spec_wensen)";
 
 // Voorbereiden van de SQL-statement voor klanten
 $stmt_klanten = $dbh->prepare($sql_klanten);
@@ -57,6 +57,7 @@ $stmt_klanten->bindParam(':email', $email);
 $stmt_klanten->bindParam(':volwassen', $volwassen);
 $stmt_klanten->bindParam(':kinderen', $kinderen);
 $stmt_klanten->bindParam(':babys', $babys);
+$stmt_klanten->bindParam(':spec_wensen', $custom_eis);
 
 // Uitvoeren van de SQL-statement voor klanten
 try {
@@ -78,8 +79,9 @@ $new_id = $last_id + 1;
 
 // Nu voegen we de aangepaste eis toe aan de tabel klant_eigen_eisen
 // SQL-query om de aangepaste eis in te voegen in klant_eigen_eisen
-$sql_custom_eis = "INSERT INTO klant_eigen_eisen (klant_id, eis) 
-              VALUES (:klant_id, :custom_eis)";
+print_r($_POST);
+$sql_custom_eis = "INSERT INTO eisen_has_klanten (eisen_ideisen, klanten_idklanten) 
+              VALUES (:custom_eis, :klant_id)";
 
 // Voorbereiden van de SQL-statement voor aangepaste eis
 $stmt_custom_eis = $dbh->prepare($sql_custom_eis);

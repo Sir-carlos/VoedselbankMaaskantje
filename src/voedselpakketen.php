@@ -51,7 +51,7 @@
                     <td>" . $value["naam"] . "</td>
                     <td>" . $value["aanmaak"] . "</td>
                     <td>" . $value["uitgifte"] . '</td>
-                    <td> <a href=".php?q='. $key .'"><img src="bewerken.png" class="bimg" onclick="sendkey($key)"></a>');
+                    '/*<td> <a href=".php?q='. $key .'"><img src="bewerken.png" class="bimg" onclick="sendkey($key)"></a>'*/);
 
                     if(!$value['uitgifte']){
                         echo('

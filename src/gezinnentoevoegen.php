@@ -59,7 +59,7 @@
         $sql_eisen = "SELECT * FROM eisen";
         $stmt_eisen = $dbh->query($sql_eisen);
         while ($row_eis = $stmt_eisen->fetch(PDO::FETCH_ASSOC)) {
-            echo "<input type='checkbox'>
+            echo "<input type='checkbox' id='eisen'>
             <label>" . $row_eis['eis'] . "</label>";
         }
         ?>
