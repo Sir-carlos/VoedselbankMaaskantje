@@ -23,5 +23,5 @@ foreach($klanten as $key => $value){
 }
 
 foreach($q as $key => $value){
-    $dbh -> query("INSERT INTO voedselpakket(`idpakket`, `naam`, `aanmaak`, `uitgifte`, `klanten_idklanten`, `producten`, `aantal`) VALUES('". $last_id + $key ."', '". $value['naam'] ."', now(), now(), '". $klant_id ."', '". $value['product'] ."', '". $value['aantal'] ."');");
+    $dbh -> query("INSERT INTO voedselpakket(`idpakket`, `naam`, `aanmaak`, `uitgifte`, `klanten_idklanten`, `producten`, `aantal`) VALUES('". $last_id + 1 ."', '". $value['naam'] ."', now(), NULL, '". $klant_id ."', '". $value['product'] ."', '". $value['aantal'] ."');");
 }

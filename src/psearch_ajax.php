@@ -20,4 +20,3 @@ foreach ($results as $key => $result) {
             <td> <a href='producten_bewerken.php?q=". $result['idproduct']-1 ."'><img src='bewerken.png' class='bimg' onclick='sendkey($result[idproduct])'></a> </td>
         </tr>";
 }
-?>

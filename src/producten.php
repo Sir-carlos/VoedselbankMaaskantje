@@ -65,7 +65,7 @@
                     document.getElementById("table-body").innerHTML = this.responseText;
                 }
             };
-            xmlhttp.open("GET", "search_ajax.php?q=" + value, true);
+            xmlhttp.open("GET", "psearch_ajax.php?q=" + value, true);
             xmlhttp.send();
         }
     </script>
