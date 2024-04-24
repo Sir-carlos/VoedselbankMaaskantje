@@ -19,7 +19,7 @@
 
     <div class="control">
         <div class="search">
-            <input type="search" id="site-search" name="search" placeholder="Zoeken . . ." />
+            <input type="search" id="site-search" name="search" placeholder="Zoeken . . ." onkeyup="search(this.value)" />
         </div>
         <div class="box">
             <a class="button" href="voedselpakket_toevoegen.php"><img src="plusicon.svg" class="svg" width="30px">Toevoegen</a>
@@ -36,11 +36,11 @@
             <th>Acties</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="table-body">
         <?php
         $query = $dbh->prepare(
             "SELECT * FROM voedselpakket 
-            INNER JOIN klanten ON voedselpakket.klanten_idklanten = klanten.idklanten;");
+            INNER JOIN klanten ON voedselpakket.klanten_idklanten = klanten.idklanten ORDER BY idpakket DESC;");
             $result = $query->execute();
             $all = $query->fetchAll();
 
@@ -51,9 +51,15 @@
                     <td>" . $value["naam"] . "</td>
                     <td>" . $value["aanmaak"] . "</td>
                     <td>" . $value["uitgifte"] . '</td>
-                    <td> <a href=".php?q='. $key .'"><img src="bewerken.png" class="bimg" onclick="sendkey($key)"></a> </td>
-                    </tr>'
-                  );
+                    <td> <a href=".php?q='. $key .'"><img src="bewerken.png" class="bimg" onclick="sendkey($key)"></a>');
+
+                    if(!$value['uitgifte']){
+                        echo('
+                        <a href=".php?q='. $key .'" onclick="event.preventDefault();"><img src="picked_up.png" class="bimg" onclick="ndate('. $value['idpakket'] .')"></a>
+                        </td>
+                         </tr>'
+                        );
+                    };
             };
 
             if(!empty($_REQUEST)){
@@ -67,6 +73,29 @@
         ?>
     </tbody>
 </table>
+
+<script>
+    function search(value) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("table-body").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "vsearch_ajax.php?q=" + value, true);
+        xmlhttp.send();
+    }
+    function ndate(value){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onload = function() {
+            if(this.response == "success"){
+                location.reload();
+            }
+        };
+        xmlhttp.open("GET", "date_ajax.php?q=" + value, true);
+        xmlhttp.send();
+    }
+</script>
 
 </body>
     <script src="script.js"></script>

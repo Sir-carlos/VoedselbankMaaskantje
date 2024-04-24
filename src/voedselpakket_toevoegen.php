@@ -6,9 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pakketen maken</title>
     <link rel="stylesheet" href="formstyle.css">
+    <style>
+        #container{
+            background-color: rgba(255, 99, 71, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            box-sizing: border-box;
+            padding: 20px;
+            position: absolute;
+        }
+
+        .form-wrapper {
+            margin-top: -200px;
+        }
+        .form-wrapperr {
+            margin-top: -200px;
+        }
+    </style>
 </head>
 <body>
-    <!--<form action="voedselpakketen.php" method="POST">-->
+    <div id="container">
+    </div>
+
+    <div class="form-wrapper">
+        <div class="form-containersmall">
         <h1>Voedselpakket Samenstelling</h1>
 
         <br>
@@ -16,7 +37,7 @@
         <p id="wensen"></p>
 
         <label for="familie">Familie:</label>
-        <select id="keuzen_f" onchange="wensen()">
+        <select id="keuzen_f" onchange="wensen()" class="form-select">
         <option>Select</option>
         <?php
                 $query = $dbh->prepare(
@@ -34,7 +55,7 @@
         <br>
 
         <label for="prod">Selecteer Producten</label>
-        <select id="keuzen_p" onchange="press()">
+        <select id="keuzen_p" onchange="press()" class="form-select">
         <option>Select</option>
         <?php
                 $query = $dbh->prepare(
@@ -51,11 +72,11 @@
         <br>
 
         <button id='send' onclick="submit()">Submit</button>
-    </form>
-
+        </div>
+    </div>
 
 <div class="form-wrapperr">
-    <table class="content-table">
+    <table id="content-table">
         <thead>
             <tr>
                 <th>Product Naam</th>
@@ -68,7 +89,7 @@
         <tbody>
             <script>
                 function press(){
-                    var x = document.getElementById("keuzen_p").value;
+                var x = document.getElementById("keuzen_p").value;
                 if(x === "Select"){return};
                 var table = document.getElementById("content-table");
 
@@ -124,6 +145,19 @@
             var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onload = function() {
                 var info = JSON.parse(this.response);
+                console.log(info[0]);
+                console.log(info.length);
+
+                document.getElementById("container").innerHTML = "";
+                
+                for(let i = 0; i < info.length; i++){
+                    var check = document.getElementById("container");
+                    var te = document.createElement('p');
+                    var test = document.createTextNode(info[i]);
+                    te.appendChild(test);
+                    check.appendChild(te);
+                }
+
             }
                 xmlhttp.open("GET", "wensen_ajax.php?q=" + x, true);
                 xmlhttp.send();
@@ -147,10 +181,10 @@
                 
                 window.location.replace("http://localhost/examproj/VoedselbankMaaskantje/src/voedselpakketen.php");
         }
-        </script>  
-    </tbody>
-</table>
-</div>
+            </script>  
+        </tbody>
+    </table>
 </body>
+</div>
     <script src="script.js"></script>
 </html>

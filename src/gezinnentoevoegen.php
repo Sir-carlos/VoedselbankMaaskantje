@@ -53,9 +53,25 @@
                 </div>
             </div>
             <div class="form-group">
-                    <label for="veld9">Eisen:</label>
-                    <input type="text" id="veld9" name="veld9" required>
-                </div>
+    <label for="eisen">Eisen:</label>
+    <select id="eisen" name="eisen">
+        <option value="">Selecteer een eis</option>
+        <?php
+        // Query om bestaande eisen op te halen
+        $sql_eisen = "SELECT * FROM eisen";
+        $stmt_eisen = $dbh->query($sql_eisen);
+        while ($row_eis = $stmt_eisen->fetch(PDO::FETCH_ASSOC)) {
+            echo "<option value='" . $row_eis['eis'] . "'>" . $row_eis['eis'] . "</option>";
+        }
+        ?>
+    </select>
+</div>
+<div class="form-group">
+    <label for="custom_eis">Of voeg een aangepaste eis toe:</label>
+    <input type="text" id="custom_eis" name="custom_eis">
+</div>
+
+                
             <button type="submit" class="buttonz">Verzenden</button>
         </form>
     </div>

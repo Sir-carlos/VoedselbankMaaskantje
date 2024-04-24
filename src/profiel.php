@@ -8,21 +8,13 @@
     <link rel="stylesheet" href="style.css">
     <title>Profile</title>
     <style>
-        .pgrid{
-            display: grid;
+        *{
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <h1>Profiel</h1>
-
-    <div class="pgrid">
-        <div class="pgrid-item">FEA</div>
-        <div class="pgrid-item">FSA</div>
-        <div class="pgrid-item">FEAV</div>
-        <div class="pgrid-item">VBS</div>
-        <div class="pgrid-item">BSD</div>
-    </div>
 
     <a href="wachtwoord.php">Verander Wachtwoord</a>
     <br>
