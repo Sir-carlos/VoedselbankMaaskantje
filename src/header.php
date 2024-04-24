@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="headerstyle.css">
+    <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +38,7 @@
             echo('<a href="login.php" style="float: right;"><span>Login</span></a>');
         }
         ?>
-            <?php include 'dark_mode_toggle.php'; ?> <!-- Include dark mode toggle -->
+        
 
     </div>
 
