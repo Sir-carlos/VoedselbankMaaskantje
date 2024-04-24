@@ -20,12 +20,43 @@
             margin-top: -200px;
         }
         .form-wrapperr {
-            margin-top: -200px;
+            margin-top: -280px;
+        }
+
+        #content-table {
+          border-collapse: collapse;
+          margin: 25px 0;
+          font-size: 0.9em;
+          min-width: 400px;
+          border-radius: 5px 5px 0 0;
+          overflow: hidden;
+          box-shadow: 0 0 1px grey;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 100px;
+          width: 80%;
+        }
+
+        #content-table thead {
+          background-color: #00BF63;
+          color: #ffffff;
+          text-align: left;
+          font-weight: bold;
+        }
+
+        #content-table th,
+        #content-table td {
+          padding: 12px 15px; 
+        }
+
+        #content-table tbody tr {
+          border-bottom: 1px solid #dddddd;
         }
     </style>
 </head>
 <body>
     <div id="container">
+        <p>Wensen:</p>
     </div>
 
     <div class="form-wrapper">
@@ -145,15 +176,13 @@
             var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onload = function() {
                 var info = JSON.parse(this.response);
-                console.log(info[0]);
-                console.log(info.length);
 
                 document.getElementById("container").innerHTML = "";
                 
                 for(let i = 0; i < info.length; i++){
                     var check = document.getElementById("container");
                     var te = document.createElement('p');
-                    var test = document.createTextNode(info[i]);
+                    var test = document.createTextNode("- " + info[i]);
                     te.appendChild(test);
                     check.appendChild(te);
                 }
