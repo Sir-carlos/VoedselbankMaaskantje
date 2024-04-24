@@ -6,8 +6,8 @@ include 'database.php';
 $searchTerm = $_GET['q'];
 
 // Bereid de query voor (let op: voorkom SQL-injectie)
-$query = $dbh->prepare("SELECT * FROM producten WHERE naam OR ean LIKE ?");
-$query->execute(["%$searchTerm%"]);
+$query = $dbh->prepare("SELECT * FROM producten WHERE naam LIKE '%$searchTerm%' or ean LIKE '%$searchTerm%';");
+$query->execute(/*["%$searchTerm%"]*/);
 $results = $query->fetchAll();
 
 // Toon resultaten

@@ -23,7 +23,9 @@ foreach($klanten as $key => $value){
 }
 
 foreach($q as $key => $value){
-    //$dbh -> query("INSERT INTO voedselpakket(`idpakket`, `naam`, `aanmaak`, `uitgifte`, `klanten_idklanten`, `producten`, `aantal`) VALUES('". $last_id + 1 ."', '". $value['naam'] ."', now(), NULL, '". $klant_id ."', '". $value['product'] ."', '". $value['aantal'] ."');");
+    $dbh -> query("INSERT INTO voedselpakket(`idpakket`, `naam`, `aanmaak`, `uitgifte`, `klanten_idklanten`, `producten`, `aantal`) VALUES('". $last_id + 1 ."', '". $value['naam'] ."', now(), NULL, '". $klant_id ."', '". $value['product'] ."', '". $value['aantal'] ."');");
+
+    $last_id++;
 }
 
 $query = $dbh->prepare(
@@ -36,12 +38,6 @@ foreach($q as $key => $value){
         "SELECT * FROM producten WHERE naam = '". $value['product'] ."';");
         $result = $query->execute();
         $prod = $query->fetchAll();
-
-        echo($value['aantal']);
-        print_r($prod);
-        echo($prod['aantal']);
-
-        echo($test);
         
-        //$dbh -> query("UPDATE producten SET aantal = '". $value['aantal'] - $prod['aantal'] ."' WHERE idproduct = '". $value['idproduct'] ."';");
+        $dbh -> query("UPDATE producten SET aantal = '". $prod[0]['aantal'] - $value['aantal']."' WHERE naam = '". $value['product'] ."';");
 }
