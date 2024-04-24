@@ -1,52 +1,8 @@
-
-*{
-  margin: 0;
-}
 body {
   background-color: #ffffff; 
   color: #000000; 
   
 }
-
-/* navigation structure styling */
-.nav{
-  background-color:#00bf63;
-  overflow: hidden;
-  position: relative;
-}
-
-.nav a{
-  color: black;
-  text-align: center;
-  padding: 14px 16px !important;
-  text-decoration: none; 
-  font-size: 17px;
-  float: left;
-}
-
-.nav a:hover {
-background-color: #00934c;
-color: #000000;
-} 
-
-.nav a:active {
-  color: #000000;
-  background-color: rgba(0, 147, 76, 0.767)
-}
-
-.home-container {
-
-  display: flex !important;
-  flex-direction: column-reverse;
-    justify-content: space-between; 
-    align-items: center;
-    margin-bottom: 50px;  
-  }
-  
-  .home-container img {
-    width: 50%;
-    padding-bottom: 20px;
-  }
 
 .control {
   align-items: center;
@@ -58,12 +14,11 @@ color: #000000;
   margin: auto;
 }
 
-.home-container {
-
+.home-container { 
 display: flex !important;
 flex-direction: column;
-  justify-content: space-between; 
-  align-items: center; 
+  justify-content: space-between; /* Center horizontally */
+  align-items: center; /* Center vertically */
   margin-bottom: 50px;  
 }
 
@@ -74,7 +29,6 @@ flex-direction: column;
 
 
 .button {
-  transition: background-color 0.2s;
   color: white;
   background-color: #00BF63;
   border: none;
@@ -86,6 +40,7 @@ flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: background-color 0.2s;
 }
 
 .button:hover {
@@ -105,7 +60,7 @@ input[type=search]{
 
 /* Heading styling */
 h1{
-  padding: 50px 0px 50px;
+  padding: 100px 0px 50px;
   text-align: center;
 }
 
