@@ -175,11 +175,12 @@
 
             var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onload = function() {
+                    console.log(this.response);
                 }
                 xmlhttp.open("GET", "send_ajax.php?q=" + JSON.stringify(arr), true);
                 xmlhttp.send();
                 
-                window.location.replace("http://localhost/examproj/VoedselbankMaaskantje/src/voedselpakketen.php");
+                //window.location.replace("http://localhost/examproj/VoedselbankMaaskantje/src/voedselpakketen.php");
         }
             </script>  
         </tbody>

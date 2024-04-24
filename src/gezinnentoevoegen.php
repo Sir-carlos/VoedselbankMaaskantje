@@ -54,14 +54,13 @@
             </div>
             <div class="form-group">
     <label for="eisen">Eisen:</label>
-    <select id="eisen" name="eisen">
-        <option value="">Selecteer een eis</option>
         <?php
         // Query om bestaande eisen op te halen
         $sql_eisen = "SELECT * FROM eisen";
         $stmt_eisen = $dbh->query($sql_eisen);
         while ($row_eis = $stmt_eisen->fetch(PDO::FETCH_ASSOC)) {
-            echo "<option value='" . $row_eis['eis'] . "'>" . $row_eis['eis'] . "</option>";
+            echo "<input type='checkbox'>
+            <label>" . $row_eis['eis'] . "</label>";
         }
         ?>
     </select>
